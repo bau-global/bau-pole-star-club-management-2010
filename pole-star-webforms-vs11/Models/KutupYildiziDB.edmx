@@ -1,0 +1,1763 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="KutupYildiziDBModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="KutupYildiziDBModelStoreContainer">
+          <EntitySet Name="Achievement" EntityType="KutupYildiziDBModel.Store.Achievement" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="AchievementClub" EntityType="KutupYildiziDBModel.Store.AchievementClub" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="AchievementPerson" EntityType="KutupYildiziDBModel.Store.AchievementPerson" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="AchievementType" EntityType="KutupYildiziDBModel.Store.AchievementType" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="AdministrativeBoard" EntityType="KutupYildiziDBModel.Store.AdministrativeBoard" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Club" EntityType="KutupYildiziDBModel.Store.Club" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ClubMember" EntityType="KutupYildiziDBModel.Store.ClubMember" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Department" EntityType="KutupYildiziDBModel.Store.Department" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Device" EntityType="KutupYildiziDBModel.Store.Device" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="DeviceType" EntityType="KutupYildiziDBModel.Store.DeviceType" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Event" EntityType="KutupYildiziDBModel.Store.Event" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="GlobalType" EntityType="KutupYildiziDBModel.Store.GlobalType" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Person" EntityType="KutupYildiziDBModel.Store.Person" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PersonEventAttend" EntityType="KutupYildiziDBModel.Store.PersonEventAttend" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PersonFollowClub" EntityType="KutupYildiziDBModel.Store.PersonFollowClub" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Result" EntityType="KutupYildiziDBModel.Store.Result" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ResultType" EntityType="KutupYildiziDBModel.Store.ResultType" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Role" EntityType="KutupYildiziDBModel.Store.Role" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SocialMedia" EntityType="KutupYildiziDBModel.Store.SocialMedia" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SocialMediaClub" EntityType="KutupYildiziDBModel.Store.SocialMediaClub" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SocialMediaPerson" EntityType="KutupYildiziDBModel.Store.SocialMediaPerson" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="sysdiagrams" EntityType="KutupYildiziDBModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Timeline" EntityType="KutupYildiziDBModel.Store.Timeline" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="University" EntityType="KutupYildiziDBModel.Store.University" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_Achievement_AchievementType" Association="KutupYildiziDBModel.Store.FK_Achievement_AchievementType">
+            <End Role="AchievementType" EntitySet="AchievementType" />
+            <End Role="Achievement" EntitySet="Achievement" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Achievement_GlobalType" Association="KutupYildiziDBModel.Store.FK_Achievement_GlobalType">
+            <End Role="GlobalType" EntitySet="GlobalType" />
+            <End Role="Achievement" EntitySet="Achievement" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Achievement_ResultType" Association="KutupYildiziDBModel.Store.FK_Achievement_ResultType">
+            <End Role="ResultType" EntitySet="ResultType" />
+            <End Role="Achievement" EntitySet="Achievement" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AchievementClub_Achievement" Association="KutupYildiziDBModel.Store.FK_AchievementClub_Achievement">
+            <End Role="Achievement" EntitySet="Achievement" />
+            <End Role="AchievementClub" EntitySet="AchievementClub" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AchievementClub_Club" Association="KutupYildiziDBModel.Store.FK_AchievementClub_Club">
+            <End Role="Club" EntitySet="Club" />
+            <End Role="AchievementClub" EntitySet="AchievementClub" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AchievementPerson_Achievement" Association="KutupYildiziDBModel.Store.FK_AchievementPerson_Achievement">
+            <End Role="Achievement" EntitySet="Achievement" />
+            <End Role="AchievementPerson" EntitySet="AchievementPerson" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AchievementPerson_Person" Association="KutupYildiziDBModel.Store.FK_AchievementPerson_Person">
+            <End Role="Person" EntitySet="Person" />
+            <End Role="AchievementPerson" EntitySet="AchievementPerson" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AdministrativeBoard_Person" Association="KutupYildiziDBModel.Store.FK_AdministrativeBoard_Person">
+            <End Role="Person" EntitySet="Person" />
+            <End Role="AdministrativeBoard" EntitySet="AdministrativeBoard" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AdministrativeBoard_Role" Association="KutupYildiziDBModel.Store.FK_AdministrativeBoard_Role">
+            <End Role="Role" EntitySet="Role" />
+            <End Role="AdministrativeBoard" EntitySet="AdministrativeBoard" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Administrator_Club1" Association="KutupYildiziDBModel.Store.FK_Administrator_Club1">
+            <End Role="Club" EntitySet="Club" />
+            <End Role="AdministrativeBoard" EntitySet="AdministrativeBoard" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ClubMember_Club" Association="KutupYildiziDBModel.Store.FK_ClubMember_Club">
+            <End Role="Club" EntitySet="Club" />
+            <End Role="ClubMember" EntitySet="ClubMember" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ClubMember_Person" Association="KutupYildiziDBModel.Store.FK_ClubMember_Person">
+            <End Role="Person" EntitySet="Person" />
+            <End Role="ClubMember" EntitySet="ClubMember" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Device_DeviceType" Association="KutupYildiziDBModel.Store.FK_Device_DeviceType">
+            <End Role="DeviceType" EntitySet="DeviceType" />
+            <End Role="Device" EntitySet="Device" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Device_Person" Association="KutupYildiziDBModel.Store.FK_Device_Person">
+            <End Role="Person" EntitySet="Person" />
+            <End Role="Device" EntitySet="Device" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Event_Club" Association="KutupYildiziDBModel.Store.FK_Event_Club">
+            <End Role="Club" EntitySet="Club" />
+            <End Role="Event" EntitySet="Event" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Person_Department" Association="KutupYildiziDBModel.Store.FK_Person_Department">
+            <End Role="Department" EntitySet="Department" />
+            <End Role="Person" EntitySet="Person" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Person_University" Association="KutupYildiziDBModel.Store.FK_Person_University">
+            <End Role="University" EntitySet="University" />
+            <End Role="Person" EntitySet="Person" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PersonEventAttend_Person" Association="KutupYildiziDBModel.Store.FK_PersonEventAttend_Person">
+            <End Role="Person" EntitySet="Person" />
+            <End Role="PersonEventAttend" EntitySet="PersonEventAttend" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PersonFollowClub_Person" Association="KutupYildiziDBModel.Store.FK_PersonFollowClub_Person">
+            <End Role="Person" EntitySet="Person" />
+            <End Role="PersonFollowClub" EntitySet="PersonFollowClub" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Result_GlobalType" Association="KutupYildiziDBModel.Store.FK_Result_GlobalType">
+            <End Role="GlobalType" EntitySet="GlobalType" />
+            <End Role="Result" EntitySet="Result" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Result_ResultType" Association="KutupYildiziDBModel.Store.FK_Result_ResultType">
+            <End Role="ResultType" EntitySet="ResultType" />
+            <End Role="Result" EntitySet="Result" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SocialMediaClub_Club" Association="KutupYildiziDBModel.Store.FK_SocialMediaClub_Club">
+            <End Role="Club" EntitySet="Club" />
+            <End Role="SocialMediaClub" EntitySet="SocialMediaClub" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SocialMediaClub_SocialMedia" Association="KutupYildiziDBModel.Store.FK_SocialMediaClub_SocialMedia">
+            <End Role="SocialMedia" EntitySet="SocialMedia" />
+            <End Role="SocialMediaClub" EntitySet="SocialMediaClub" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SocialMediaPerson_Person" Association="KutupYildiziDBModel.Store.FK_SocialMediaPerson_Person">
+            <End Role="Person" EntitySet="Person" />
+            <End Role="SocialMediaPerson" EntitySet="SocialMediaPerson" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SocialMediaPerson_SocialMedia" Association="KutupYildiziDBModel.Store.FK_SocialMediaPerson_SocialMedia">
+            <End Role="SocialMedia" EntitySet="SocialMedia" />
+            <End Role="SocialMediaPerson" EntitySet="SocialMediaPerson" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Timeline_GlobalType1" Association="KutupYildiziDBModel.Store.FK_Timeline_GlobalType1">
+            <End Role="GlobalType" EntitySet="GlobalType" />
+            <End Role="Timeline" EntitySet="Timeline" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserEventAttend_Event" Association="KutupYildiziDBModel.Store.FK_UserEventAttend_Event">
+            <End Role="Event" EntitySet="Event" />
+            <End Role="PersonEventAttend" EntitySet="PersonEventAttend" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserFollowClub_Club" Association="KutupYildiziDBModel.Store.FK_UserFollowClub_Club">
+            <End Role="Club" EntitySet="Club" />
+            <End Role="PersonFollowClub" EntitySet="PersonFollowClub" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Achievement">
+          <Key>
+            <PropertyRef Name="AchievementID" />
+          </Key>
+          <Property Name="AchievementID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="AchievementNameTR" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="AchievementNameENG" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="AchievementIconURL" Type="nvarchar" MaxLength="250" />
+          <Property Name="AchievementPoint" Type="int" Nullable="false" />
+          <Property Name="AchievementRequiredCount" Type="int" Nullable="false" />
+          <Property Name="AchievementTypeID" Type="int" Nullable="false" />
+          <Property Name="GlobalTypeID" Type="int" Nullable="false" />
+          <Property Name="ResultTypeID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AchievementClub">
+          <Key>
+            <PropertyRef Name="ClubID" />
+            <PropertyRef Name="AchievementID" />
+          </Key>
+          <Property Name="ClubID" Type="int" Nullable="false" />
+          <Property Name="AchievementID" Type="int" Nullable="false" />
+          <Property Name="CompletedDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AchievementPerson">
+          <Key>
+            <PropertyRef Name="PersonID" />
+            <PropertyRef Name="AchievementID" />
+          </Key>
+          <Property Name="PersonID" Type="int" Nullable="false" />
+          <Property Name="AchievementID" Type="int" Nullable="false" />
+          <Property Name="CompletedDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AchievementType">
+          <Key>
+            <PropertyRef Name="AchievementTypeID" />
+          </Key>
+          <Property Name="AchievementTypeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="AchievementTypeName" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="TableName" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="ColumnName" Type="nvarchar" Nullable="false" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="AdministrativeBoard">
+          <Key>
+            <PropertyRef Name="ClubID" />
+            <PropertyRef Name="PersonID" />
+            <PropertyRef Name="RolID" />
+            <PropertyRef Name="YearStart" />
+          </Key>
+          <Property Name="ClubID" Type="int" Nullable="false" />
+          <Property Name="PersonID" Type="int" Nullable="false" />
+          <Property Name="RolID" Type="int" Nullable="false" />
+          <Property Name="YearStart" Type="char" Nullable="false" MaxLength="4" />
+          <Property Name="YearEnd" Type="char" MaxLength="4" />
+          <Property Name="ClubAdvisorFullName" Type="nvarchar" MaxLength="255" />
+          <Property Name="IsArchive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Club">
+          <Key>
+            <PropertyRef Name="ClubID" />
+          </Key>
+          <Property Name="ClubID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ClubNameTR" Type="nvarchar" Nullable="false" MaxLength="255" />
+          <Property Name="ClubNameENG" Type="nvarchar" Nullable="false" MaxLength="255" />
+          <Property Name="ClubDescTR" Type="text" Nullable="false" />
+          <Property Name="ClubDescENG" Type="text" />
+          <Property Name="ClubFoundDate" Type="datetime" Nullable="false" />
+          <Property Name="ClubStatuteTR" Type="text" />
+          <Property Name="ClubStatuteENG" Type="text" />
+          <Property Name="ClubLogoPathTR" Type="nvarchar" MaxLength="255" />
+          <Property Name="ClubLogoPathENG" Type="nvarchar" MaxLength="255" />
+          <Property Name="ClubAdvisorFullName" Type="nvarchar" MaxLength="255" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="ClubMemberCount" Type="int" Nullable="false" />
+          <Property Name="ClubEventCount" Type="int" Nullable="false" />
+          <Property Name="ClubFollowerCount" Type="int" Nullable="false" />
+          <Property Name="ClubShareCount" Type="int" Nullable="false" />
+          <Property Name="ClubEventTotalAttendCount" Type="int" Nullable="false" />
+          <Property Name="ClubSocialMediaCount" Type="int" Nullable="false" />
+          <Property Name="ClubAchievementCount" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ClubMember">
+          <Key>
+            <PropertyRef Name="ClubID" />
+            <PropertyRef Name="PersonID" />
+          </Key>
+          <Property Name="ClubID" Type="int" Nullable="false" />
+          <Property Name="PersonID" Type="int" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Department">
+          <Key>
+            <PropertyRef Name="DepartmentID" />
+          </Key>
+          <Property Name="DepartmentID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="DepartmentNameTR" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="DepartmentNameENG" Type="nvarchar" Nullable="false" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Device">
+          <Key>
+            <PropertyRef Name="DeviceID" />
+          </Key>
+          <Property Name="DeviceID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="PersonID" Type="int" Nullable="false" />
+          <Property Name="DeviceTypeID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DeviceType">
+          <Key>
+            <PropertyRef Name="DeviceTypeID" />
+          </Key>
+          <Property Name="DeviceTypeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="DeviceTypeName" Type="nvarchar" Nullable="false" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Event">
+          <Key>
+            <PropertyRef Name="EventID" />
+          </Key>
+          <Property Name="EventID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="EventNameTR" Type="nvarchar" Nullable="false" MaxLength="250" />
+          <Property Name="EventNameENG" Type="nvarchar" Nullable="false" MaxLength="250" />
+          <Property Name="ClubID" Type="int" Nullable="false" />
+          <Property Name="EventPlaceTR" Type="nvarchar" Nullable="false" MaxLength="250" />
+          <Property Name="EventPlaceENG" Type="nvarchar" MaxLength="250" />
+          <Property Name="EventHallTR" Type="nvarchar" Nullable="false" MaxLength="250" />
+          <Property Name="EventHallENG" Type="nvarchar" MaxLength="250" />
+          <Property Name="EventStartDate" Type="date" Nullable="false" />
+          <Property Name="EventFinishDate" Type="date" Nullable="false" />
+          <Property Name="EventStartTime" Type="nvarchar" Nullable="false" MaxLength="5" />
+          <Property Name="EventFinishTime" Type="nvarchar" Nullable="false" MaxLength="5" />
+          <Property Name="EventLastUpdate" Type="datetime" Nullable="false" />
+          <Property Name="EventPosterLink" Type="nvarchar" MaxLength="500" />
+          <Property Name="EventDescTR" Type="text" Nullable="false" />
+          <Property Name="EventDescENG" Type="text" />
+          <Property Name="EventConfirm" Type="bit" Nullable="false" />
+          <Property Name="EventAttendCount" Type="int" Nullable="false" />
+          <Property Name="EventShareCount" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="GlobalType">
+          <Key>
+            <PropertyRef Name="GlobalTypeID" />
+          </Key>
+          <Property Name="GlobalTypeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="GlobalTypeName" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Person">
+          <Key>
+            <PropertyRef Name="PersonID" />
+          </Key>
+          <Property Name="PersonID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="PersonFName" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="PersonLName" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="PersonEmail" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="UniversityID" Type="int" Nullable="false" />
+          <Property Name="DepartmentID" Type="int" Nullable="false" />
+          <Property Name="PersonEventAttendCount" Type="int" Nullable="false" />
+          <Property Name="PersonShareCount" Type="int" Nullable="false" />
+          <Property Name="PersonClubFollowCount" Type="int" Nullable="false" />
+          <Property Name="PersonClubMemberCount" Type="int" Nullable="false" />
+          <Property Name="PersonSocialMediaCount" Type="int" Nullable="false" />
+          <Property Name="PersonDeviceCount" Type="int" Nullable="false" />
+          <Property Name="PersonAchievementCount" Type="int" Nullable="false" />
+          <Property Name="PersonPassword" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="PersonPhone" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="IsHide" Type="bit" Nullable="false" />
+          <Property Name="RoleID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PersonEventAttend">
+          <Key>
+            <PropertyRef Name="PersonID" />
+            <PropertyRef Name="EventID" />
+          </Key>
+          <Property Name="PersonID" Type="int" Nullable="false" />
+          <Property Name="EventID" Type="int" Nullable="false" />
+          <Property Name="FollowDate" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="PersonFollowClub">
+          <Key>
+            <PropertyRef Name="PersonID" />
+            <PropertyRef Name="ClubID" />
+          </Key>
+          <Property Name="PersonID" Type="int" Nullable="false" />
+          <Property Name="ClubID" Type="int" Nullable="false" />
+          <Property Name="FollowDate" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Result">
+          <Key>
+            <PropertyRef Name="GlobalID" />
+            <PropertyRef Name="GlobalTypeID" />
+            <PropertyRef Name="ResultTypeID" />
+          </Key>
+          <Property Name="GlobalID" Type="int" Nullable="false" />
+          <Property Name="GlobalTypeID" Type="int" Nullable="false" />
+          <Property Name="ResultTypeID" Type="int" Nullable="false" />
+          <Property Name="ResultPoint" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ResultType">
+          <Key>
+            <PropertyRef Name="ResultTypeID" />
+          </Key>
+          <Property Name="ResultTypeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ResultTypeNameTR" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="ResultTypeNameENG" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="ResultTypeIconURL" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="RoleID" />
+          </Key>
+          <Property Name="RoleID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="RoleNameTR" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="RoleNameENG" Type="nvarchar" Nullable="false" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="SocialMedia">
+          <Key>
+            <PropertyRef Name="SocialMediaID" />
+          </Key>
+          <Property Name="SocialMediaID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SocialMediaName" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="SocialMediaLink" Type="nvarchar" Nullable="false" MaxLength="250" />
+          <Property Name="SocialMediaLogo" Type="nvarchar" Nullable="false" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="SocialMediaClub">
+          <Key>
+            <PropertyRef Name="ClubID" />
+            <PropertyRef Name="SocialMediaID" />
+          </Key>
+          <Property Name="ClubID" Type="int" Nullable="false" />
+          <Property Name="SocialMediaID" Type="int" Nullable="false" />
+          <Property Name="SocialMediaClubName" Type="nvarchar" Nullable="false" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="SocialMediaPerson">
+          <Key>
+            <PropertyRef Name="PersonID" />
+            <PropertyRef Name="SocialMediaID" />
+          </Key>
+          <Property Name="PersonID" Type="int" Nullable="false" />
+          <Property Name="SocialMediaID" Type="int" Nullable="false" />
+          <Property Name="SocialMediaPersonName" Type="nvarchar" Nullable="false" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="Timeline">
+          <Key>
+            <PropertyRef Name="TimelineID" />
+          </Key>
+          <Property Name="TimelineID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="TimelineEntryTR" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="TimelineEntryENG" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="TimelineEntryDate" Type="datetime" Nullable="false" />
+          <Property Name="GlobalID" Type="int" Nullable="false" />
+          <Property Name="GlobalTypeID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="University">
+          <Key>
+            <PropertyRef Name="UniversityID" />
+          </Key>
+          <Property Name="UniversityID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UniversityNameTR" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="UniversityNameENG" Type="nvarchar" Nullable="false" MaxLength="100" />
+        </EntityType>
+        <Association Name="FK_Achievement_AchievementType">
+          <End Role="AchievementType" Type="KutupYildiziDBModel.Store.AchievementType" Multiplicity="1" />
+          <End Role="Achievement" Type="KutupYildiziDBModel.Store.Achievement" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AchievementType">
+              <PropertyRef Name="AchievementTypeID" />
+            </Principal>
+            <Dependent Role="Achievement">
+              <PropertyRef Name="AchievementTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Achievement_GlobalType">
+          <End Role="GlobalType" Type="KutupYildiziDBModel.Store.GlobalType" Multiplicity="1" />
+          <End Role="Achievement" Type="KutupYildiziDBModel.Store.Achievement" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GlobalType">
+              <PropertyRef Name="GlobalTypeID" />
+            </Principal>
+            <Dependent Role="Achievement">
+              <PropertyRef Name="GlobalTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Achievement_ResultType">
+          <End Role="ResultType" Type="KutupYildiziDBModel.Store.ResultType" Multiplicity="1" />
+          <End Role="Achievement" Type="KutupYildiziDBModel.Store.Achievement" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ResultType">
+              <PropertyRef Name="ResultTypeID" />
+            </Principal>
+            <Dependent Role="Achievement">
+              <PropertyRef Name="ResultTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AchievementClub_Achievement">
+          <End Role="Achievement" Type="KutupYildiziDBModel.Store.Achievement" Multiplicity="1" />
+          <End Role="AchievementClub" Type="KutupYildiziDBModel.Store.AchievementClub" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Achievement">
+              <PropertyRef Name="AchievementID" />
+            </Principal>
+            <Dependent Role="AchievementClub">
+              <PropertyRef Name="AchievementID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AchievementClub_Club">
+          <End Role="Club" Type="KutupYildiziDBModel.Store.Club" Multiplicity="1" />
+          <End Role="AchievementClub" Type="KutupYildiziDBModel.Store.AchievementClub" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Club">
+              <PropertyRef Name="ClubID" />
+            </Principal>
+            <Dependent Role="AchievementClub">
+              <PropertyRef Name="ClubID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AchievementPerson_Achievement">
+          <End Role="Achievement" Type="KutupYildiziDBModel.Store.Achievement" Multiplicity="1" />
+          <End Role="AchievementPerson" Type="KutupYildiziDBModel.Store.AchievementPerson" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Achievement">
+              <PropertyRef Name="AchievementID" />
+            </Principal>
+            <Dependent Role="AchievementPerson">
+              <PropertyRef Name="AchievementID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AchievementPerson_Person">
+          <End Role="Person" Type="KutupYildiziDBModel.Store.Person" Multiplicity="1" />
+          <End Role="AchievementPerson" Type="KutupYildiziDBModel.Store.AchievementPerson" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="PersonID" />
+            </Principal>
+            <Dependent Role="AchievementPerson">
+              <PropertyRef Name="PersonID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AdministrativeBoard_Person">
+          <End Role="Person" Type="KutupYildiziDBModel.Store.Person" Multiplicity="1" />
+          <End Role="AdministrativeBoard" Type="KutupYildiziDBModel.Store.AdministrativeBoard" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="PersonID" />
+            </Principal>
+            <Dependent Role="AdministrativeBoard">
+              <PropertyRef Name="PersonID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AdministrativeBoard_Role">
+          <End Role="Role" Type="KutupYildiziDBModel.Store.Role" Multiplicity="1" />
+          <End Role="AdministrativeBoard" Type="KutupYildiziDBModel.Store.AdministrativeBoard" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="RoleID" />
+            </Principal>
+            <Dependent Role="AdministrativeBoard">
+              <PropertyRef Name="RolID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Administrator_Club1">
+          <End Role="Club" Type="KutupYildiziDBModel.Store.Club" Multiplicity="1" />
+          <End Role="AdministrativeBoard" Type="KutupYildiziDBModel.Store.AdministrativeBoard" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Club">
+              <PropertyRef Name="ClubID" />
+            </Principal>
+            <Dependent Role="AdministrativeBoard">
+              <PropertyRef Name="ClubID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ClubMember_Club">
+          <End Role="Club" Type="KutupYildiziDBModel.Store.Club" Multiplicity="1" />
+          <End Role="ClubMember" Type="KutupYildiziDBModel.Store.ClubMember" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Club">
+              <PropertyRef Name="ClubID" />
+            </Principal>
+            <Dependent Role="ClubMember">
+              <PropertyRef Name="ClubID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ClubMember_Person">
+          <End Role="Person" Type="KutupYildiziDBModel.Store.Person" Multiplicity="1" />
+          <End Role="ClubMember" Type="KutupYildiziDBModel.Store.ClubMember" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="PersonID" />
+            </Principal>
+            <Dependent Role="ClubMember">
+              <PropertyRef Name="PersonID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Device_DeviceType">
+          <End Role="DeviceType" Type="KutupYildiziDBModel.Store.DeviceType" Multiplicity="1" />
+          <End Role="Device" Type="KutupYildiziDBModel.Store.Device" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DeviceType">
+              <PropertyRef Name="DeviceTypeID" />
+            </Principal>
+            <Dependent Role="Device">
+              <PropertyRef Name="DeviceTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Device_Person">
+          <End Role="Person" Type="KutupYildiziDBModel.Store.Person" Multiplicity="1" />
+          <End Role="Device" Type="KutupYildiziDBModel.Store.Device" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="PersonID" />
+            </Principal>
+            <Dependent Role="Device">
+              <PropertyRef Name="PersonID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Event_Club">
+          <End Role="Club" Type="KutupYildiziDBModel.Store.Club" Multiplicity="1" />
+          <End Role="Event" Type="KutupYildiziDBModel.Store.Event" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Club">
+              <PropertyRef Name="ClubID" />
+            </Principal>
+            <Dependent Role="Event">
+              <PropertyRef Name="ClubID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Person_Department">
+          <End Role="Department" Type="KutupYildiziDBModel.Store.Department" Multiplicity="1" />
+          <End Role="Person" Type="KutupYildiziDBModel.Store.Person" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Department">
+              <PropertyRef Name="DepartmentID" />
+            </Principal>
+            <Dependent Role="Person">
+              <PropertyRef Name="DepartmentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Person_University">
+          <End Role="University" Type="KutupYildiziDBModel.Store.University" Multiplicity="1" />
+          <End Role="Person" Type="KutupYildiziDBModel.Store.Person" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="University">
+              <PropertyRef Name="UniversityID" />
+            </Principal>
+            <Dependent Role="Person">
+              <PropertyRef Name="UniversityID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PersonEventAttend_Person">
+          <End Role="Person" Type="KutupYildiziDBModel.Store.Person" Multiplicity="1" />
+          <End Role="PersonEventAttend" Type="KutupYildiziDBModel.Store.PersonEventAttend" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="PersonID" />
+            </Principal>
+            <Dependent Role="PersonEventAttend">
+              <PropertyRef Name="PersonID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PersonFollowClub_Person">
+          <End Role="Person" Type="KutupYildiziDBModel.Store.Person" Multiplicity="1" />
+          <End Role="PersonFollowClub" Type="KutupYildiziDBModel.Store.PersonFollowClub" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="PersonID" />
+            </Principal>
+            <Dependent Role="PersonFollowClub">
+              <PropertyRef Name="PersonID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Result_GlobalType">
+          <End Role="GlobalType" Type="KutupYildiziDBModel.Store.GlobalType" Multiplicity="1" />
+          <End Role="Result" Type="KutupYildiziDBModel.Store.Result" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GlobalType">
+              <PropertyRef Name="GlobalTypeID" />
+            </Principal>
+            <Dependent Role="Result">
+              <PropertyRef Name="GlobalTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Result_ResultType">
+          <End Role="ResultType" Type="KutupYildiziDBModel.Store.ResultType" Multiplicity="1" />
+          <End Role="Result" Type="KutupYildiziDBModel.Store.Result" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ResultType">
+              <PropertyRef Name="ResultTypeID" />
+            </Principal>
+            <Dependent Role="Result">
+              <PropertyRef Name="ResultTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SocialMediaClub_Club">
+          <End Role="Club" Type="KutupYildiziDBModel.Store.Club" Multiplicity="1" />
+          <End Role="SocialMediaClub" Type="KutupYildiziDBModel.Store.SocialMediaClub" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Club">
+              <PropertyRef Name="ClubID" />
+            </Principal>
+            <Dependent Role="SocialMediaClub">
+              <PropertyRef Name="ClubID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SocialMediaClub_SocialMedia">
+          <End Role="SocialMedia" Type="KutupYildiziDBModel.Store.SocialMedia" Multiplicity="1" />
+          <End Role="SocialMediaClub" Type="KutupYildiziDBModel.Store.SocialMediaClub" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SocialMedia">
+              <PropertyRef Name="SocialMediaID" />
+            </Principal>
+            <Dependent Role="SocialMediaClub">
+              <PropertyRef Name="SocialMediaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SocialMediaPerson_Person">
+          <End Role="Person" Type="KutupYildiziDBModel.Store.Person" Multiplicity="1" />
+          <End Role="SocialMediaPerson" Type="KutupYildiziDBModel.Store.SocialMediaPerson" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="PersonID" />
+            </Principal>
+            <Dependent Role="SocialMediaPerson">
+              <PropertyRef Name="PersonID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SocialMediaPerson_SocialMedia">
+          <End Role="SocialMedia" Type="KutupYildiziDBModel.Store.SocialMedia" Multiplicity="1" />
+          <End Role="SocialMediaPerson" Type="KutupYildiziDBModel.Store.SocialMediaPerson" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SocialMedia">
+              <PropertyRef Name="SocialMediaID" />
+            </Principal>
+            <Dependent Role="SocialMediaPerson">
+              <PropertyRef Name="SocialMediaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Timeline_GlobalType1">
+          <End Role="GlobalType" Type="KutupYildiziDBModel.Store.GlobalType" Multiplicity="1" />
+          <End Role="Timeline" Type="KutupYildiziDBModel.Store.Timeline" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GlobalType">
+              <PropertyRef Name="GlobalTypeID" />
+            </Principal>
+            <Dependent Role="Timeline">
+              <PropertyRef Name="GlobalTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserEventAttend_Event">
+          <End Role="Event" Type="KutupYildiziDBModel.Store.Event" Multiplicity="1" />
+          <End Role="PersonEventAttend" Type="KutupYildiziDBModel.Store.PersonEventAttend" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Event">
+              <PropertyRef Name="EventID" />
+            </Principal>
+            <Dependent Role="PersonEventAttend">
+              <PropertyRef Name="EventID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserFollowClub_Club">
+          <End Role="Club" Type="KutupYildiziDBModel.Store.Club" Multiplicity="1" />
+          <End Role="PersonFollowClub" Type="KutupYildiziDBModel.Store.PersonFollowClub" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Club">
+              <PropertyRef Name="ClubID" />
+            </Principal>
+            <Dependent Role="PersonFollowClub">
+              <PropertyRef Name="ClubID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="KutupYildiziDBModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="KutupYildiziDBEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Achievement" EntityType="KutupYildiziDBModel.Achievement" />
+          <EntitySet Name="AchievementClub" EntityType="KutupYildiziDBModel.AchievementClub" />
+          <EntitySet Name="AchievementPerson" EntityType="KutupYildiziDBModel.AchievementPerson" />
+          <EntitySet Name="AchievementType" EntityType="KutupYildiziDBModel.AchievementType" />
+          <EntitySet Name="AdministrativeBoard" EntityType="KutupYildiziDBModel.AdministrativeBoard" />
+          <EntitySet Name="Club" EntityType="KutupYildiziDBModel.Club" />
+          <EntitySet Name="ClubMember" EntityType="KutupYildiziDBModel.ClubMember" />
+          <EntitySet Name="Department" EntityType="KutupYildiziDBModel.Department" />
+          <EntitySet Name="Device" EntityType="KutupYildiziDBModel.Device" />
+          <EntitySet Name="DeviceType" EntityType="KutupYildiziDBModel.DeviceType" />
+          <EntitySet Name="Event" EntityType="KutupYildiziDBModel.Event" />
+          <EntitySet Name="GlobalType" EntityType="KutupYildiziDBModel.GlobalType" />
+          <EntitySet Name="Person" EntityType="KutupYildiziDBModel.Person" />
+          <EntitySet Name="PersonEventAttend" EntityType="KutupYildiziDBModel.PersonEventAttend" />
+          <EntitySet Name="PersonFollowClub" EntityType="KutupYildiziDBModel.PersonFollowClub" />
+          <EntitySet Name="Result" EntityType="KutupYildiziDBModel.Result" />
+          <EntitySet Name="ResultType" EntityType="KutupYildiziDBModel.ResultType" />
+          <EntitySet Name="Role" EntityType="KutupYildiziDBModel.Role" />
+          <EntitySet Name="SocialMedia" EntityType="KutupYildiziDBModel.SocialMedia" />
+          <EntitySet Name="SocialMediaClub" EntityType="KutupYildiziDBModel.SocialMediaClub" />
+          <EntitySet Name="SocialMediaPerson" EntityType="KutupYildiziDBModel.SocialMediaPerson" />
+          <EntitySet Name="sysdiagrams" EntityType="KutupYildiziDBModel.sysdiagrams" />
+          <EntitySet Name="Timeline" EntityType="KutupYildiziDBModel.Timeline" />
+          <EntitySet Name="University" EntityType="KutupYildiziDBModel.University" />
+          <AssociationSet Name="FK_Achievement_AchievementType" Association="KutupYildiziDBModel.FK_Achievement_AchievementType">
+            <End Role="AchievementType" EntitySet="AchievementType" />
+            <End Role="Achievement" EntitySet="Achievement" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Achievement_GlobalType" Association="KutupYildiziDBModel.FK_Achievement_GlobalType">
+            <End Role="GlobalType" EntitySet="GlobalType" />
+            <End Role="Achievement" EntitySet="Achievement" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Achievement_ResultType" Association="KutupYildiziDBModel.FK_Achievement_ResultType">
+            <End Role="ResultType" EntitySet="ResultType" />
+            <End Role="Achievement" EntitySet="Achievement" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AchievementClub_Achievement" Association="KutupYildiziDBModel.FK_AchievementClub_Achievement">
+            <End Role="Achievement" EntitySet="Achievement" />
+            <End Role="AchievementClub" EntitySet="AchievementClub" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AchievementPerson_Achievement" Association="KutupYildiziDBModel.FK_AchievementPerson_Achievement">
+            <End Role="Achievement" EntitySet="Achievement" />
+            <End Role="AchievementPerson" EntitySet="AchievementPerson" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AchievementClub_Club" Association="KutupYildiziDBModel.FK_AchievementClub_Club">
+            <End Role="Club" EntitySet="Club" />
+            <End Role="AchievementClub" EntitySet="AchievementClub" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AchievementPerson_Person" Association="KutupYildiziDBModel.FK_AchievementPerson_Person">
+            <End Role="Person" EntitySet="Person" />
+            <End Role="AchievementPerson" EntitySet="AchievementPerson" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AdministrativeBoard_Person" Association="KutupYildiziDBModel.FK_AdministrativeBoard_Person">
+            <End Role="Person" EntitySet="Person" />
+            <End Role="AdministrativeBoard" EntitySet="AdministrativeBoard" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AdministrativeBoard_Role" Association="KutupYildiziDBModel.FK_AdministrativeBoard_Role">
+            <End Role="Role" EntitySet="Role" />
+            <End Role="AdministrativeBoard" EntitySet="AdministrativeBoard" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Administrator_Club1" Association="KutupYildiziDBModel.FK_Administrator_Club1">
+            <End Role="Club" EntitySet="Club" />
+            <End Role="AdministrativeBoard" EntitySet="AdministrativeBoard" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ClubMember_Club" Association="KutupYildiziDBModel.FK_ClubMember_Club">
+            <End Role="Club" EntitySet="Club" />
+            <End Role="ClubMember" EntitySet="ClubMember" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Event_Club" Association="KutupYildiziDBModel.FK_Event_Club">
+            <End Role="Club" EntitySet="Club" />
+            <End Role="Event" EntitySet="Event" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SocialMediaClub_Club" Association="KutupYildiziDBModel.FK_SocialMediaClub_Club">
+            <End Role="Club" EntitySet="Club" />
+            <End Role="SocialMediaClub" EntitySet="SocialMediaClub" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserFollowClub_Club" Association="KutupYildiziDBModel.FK_UserFollowClub_Club">
+            <End Role="Club" EntitySet="Club" />
+            <End Role="PersonFollowClub" EntitySet="PersonFollowClub" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ClubMember_Person" Association="KutupYildiziDBModel.FK_ClubMember_Person">
+            <End Role="Person" EntitySet="Person" />
+            <End Role="ClubMember" EntitySet="ClubMember" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Person_Department" Association="KutupYildiziDBModel.FK_Person_Department">
+            <End Role="Department" EntitySet="Department" />
+            <End Role="Person" EntitySet="Person" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Device_DeviceType" Association="KutupYildiziDBModel.FK_Device_DeviceType">
+            <End Role="DeviceType" EntitySet="DeviceType" />
+            <End Role="Device" EntitySet="Device" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Device_Person" Association="KutupYildiziDBModel.FK_Device_Person">
+            <End Role="Person" EntitySet="Person" />
+            <End Role="Device" EntitySet="Device" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserEventAttend_Event" Association="KutupYildiziDBModel.FK_UserEventAttend_Event">
+            <End Role="Event" EntitySet="Event" />
+            <End Role="PersonEventAttend" EntitySet="PersonEventAttend" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Result_GlobalType" Association="KutupYildiziDBModel.FK_Result_GlobalType">
+            <End Role="GlobalType" EntitySet="GlobalType" />
+            <End Role="Result" EntitySet="Result" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Timeline_GlobalType1" Association="KutupYildiziDBModel.FK_Timeline_GlobalType1">
+            <End Role="GlobalType" EntitySet="GlobalType" />
+            <End Role="Timeline" EntitySet="Timeline" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Person_University" Association="KutupYildiziDBModel.FK_Person_University">
+            <End Role="University" EntitySet="University" />
+            <End Role="Person" EntitySet="Person" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PersonEventAttend_Person" Association="KutupYildiziDBModel.FK_PersonEventAttend_Person">
+            <End Role="Person" EntitySet="Person" />
+            <End Role="PersonEventAttend" EntitySet="PersonEventAttend" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PersonFollowClub_Person" Association="KutupYildiziDBModel.FK_PersonFollowClub_Person">
+            <End Role="Person" EntitySet="Person" />
+            <End Role="PersonFollowClub" EntitySet="PersonFollowClub" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SocialMediaPerson_Person" Association="KutupYildiziDBModel.FK_SocialMediaPerson_Person">
+            <End Role="Person" EntitySet="Person" />
+            <End Role="SocialMediaPerson" EntitySet="SocialMediaPerson" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Result_ResultType" Association="KutupYildiziDBModel.FK_Result_ResultType">
+            <End Role="ResultType" EntitySet="ResultType" />
+            <End Role="Result" EntitySet="Result" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SocialMediaClub_SocialMedia" Association="KutupYildiziDBModel.FK_SocialMediaClub_SocialMedia">
+            <End Role="SocialMedia" EntitySet="SocialMedia" />
+            <End Role="SocialMediaClub" EntitySet="SocialMediaClub" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SocialMediaPerson_SocialMedia" Association="KutupYildiziDBModel.FK_SocialMediaPerson_SocialMedia">
+            <End Role="SocialMedia" EntitySet="SocialMedia" />
+            <End Role="SocialMediaPerson" EntitySet="SocialMediaPerson" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Achievement">
+          <Key>
+            <PropertyRef Name="AchievementID" />
+          </Key>
+          <Property Name="AchievementID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AchievementNameTR" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="AchievementNameENG" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="AchievementIconURL" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+          <Property Name="AchievementPoint" Type="Int32" Nullable="false" />
+          <Property Name="AchievementRequiredCount" Type="Int32" Nullable="false" />
+          <Property Name="AchievementTypeID" Type="Int32" Nullable="false" />
+          <Property Name="GlobalTypeID" Type="Int32" Nullable="false" />
+          <Property Name="ResultTypeID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="AchievementType" Relationship="KutupYildiziDBModel.FK_Achievement_AchievementType" FromRole="Achievement" ToRole="AchievementType" />
+          <NavigationProperty Name="GlobalType" Relationship="KutupYildiziDBModel.FK_Achievement_GlobalType" FromRole="Achievement" ToRole="GlobalType" />
+          <NavigationProperty Name="ResultType" Relationship="KutupYildiziDBModel.FK_Achievement_ResultType" FromRole="Achievement" ToRole="ResultType" />
+          <NavigationProperty Name="AchievementClub" Relationship="KutupYildiziDBModel.FK_AchievementClub_Achievement" FromRole="Achievement" ToRole="AchievementClub" />
+          <NavigationProperty Name="AchievementPerson" Relationship="KutupYildiziDBModel.FK_AchievementPerson_Achievement" FromRole="Achievement" ToRole="AchievementPerson" />
+        </EntityType>
+        <EntityType Name="AchievementClub">
+          <Key>
+            <PropertyRef Name="ClubID" />
+            <PropertyRef Name="AchievementID" />
+          </Key>
+          <Property Name="ClubID" Type="Int32" Nullable="false" />
+          <Property Name="AchievementID" Type="Int32" Nullable="false" />
+          <Property Name="CompletedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Achievement" Relationship="KutupYildiziDBModel.FK_AchievementClub_Achievement" FromRole="AchievementClub" ToRole="Achievement" />
+          <NavigationProperty Name="Club" Relationship="KutupYildiziDBModel.FK_AchievementClub_Club" FromRole="AchievementClub" ToRole="Club" />
+        </EntityType>
+        <EntityType Name="AchievementPerson">
+          <Key>
+            <PropertyRef Name="PersonID" />
+            <PropertyRef Name="AchievementID" />
+          </Key>
+          <Property Name="PersonID" Type="Int32" Nullable="false" />
+          <Property Name="AchievementID" Type="Int32" Nullable="false" />
+          <Property Name="CompletedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Achievement" Relationship="KutupYildiziDBModel.FK_AchievementPerson_Achievement" FromRole="AchievementPerson" ToRole="Achievement" />
+          <NavigationProperty Name="Person" Relationship="KutupYildiziDBModel.FK_AchievementPerson_Person" FromRole="AchievementPerson" ToRole="Person" />
+        </EntityType>
+        <EntityType Name="AchievementType">
+          <Key>
+            <PropertyRef Name="AchievementTypeID" />
+          </Key>
+          <Property Name="AchievementTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AchievementTypeName" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="TableName" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="ColumnName" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Achievement" Relationship="KutupYildiziDBModel.FK_Achievement_AchievementType" FromRole="AchievementType" ToRole="Achievement" />
+        </EntityType>
+        <EntityType Name="AdministrativeBoard">
+          <Key>
+            <PropertyRef Name="ClubID" />
+            <PropertyRef Name="PersonID" />
+            <PropertyRef Name="RolID" />
+            <PropertyRef Name="YearStart" />
+          </Key>
+          <Property Name="ClubID" Type="Int32" Nullable="false" />
+          <Property Name="PersonID" Type="Int32" Nullable="false" />
+          <Property Name="RolID" Type="Int32" Nullable="false" />
+          <Property Name="YearStart" Type="String" Nullable="false" MaxLength="4" Unicode="false" FixedLength="true" />
+          <Property Name="YearEnd" Type="String" MaxLength="4" Unicode="false" FixedLength="true" />
+          <Property Name="ClubAdvisorFullName" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="IsArchive" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Person" Relationship="KutupYildiziDBModel.FK_AdministrativeBoard_Person" FromRole="AdministrativeBoard" ToRole="Person" />
+          <NavigationProperty Name="Role" Relationship="KutupYildiziDBModel.FK_AdministrativeBoard_Role" FromRole="AdministrativeBoard" ToRole="Role" />
+          <NavigationProperty Name="Club" Relationship="KutupYildiziDBModel.FK_Administrator_Club1" FromRole="AdministrativeBoard" ToRole="Club" />
+        </EntityType>
+        <EntityType Name="Club">
+          <Key>
+            <PropertyRef Name="ClubID" />
+          </Key>
+          <Property Name="ClubID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ClubNameTR" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="ClubNameENG" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="ClubDescTR" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="ClubDescENG" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="ClubFoundDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ClubStatuteTR" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="ClubStatuteENG" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="ClubLogoPathTR" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="ClubLogoPathENG" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="ClubAdvisorFullName" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="ClubMemberCount" Type="Int32" Nullable="false" />
+          <Property Name="ClubEventCount" Type="Int32" Nullable="false" />
+          <Property Name="ClubFollowerCount" Type="Int32" Nullable="false" />
+          <Property Name="ClubShareCount" Type="Int32" Nullable="false" />
+          <Property Name="ClubEventTotalAttendCount" Type="Int32" Nullable="false" />
+          <Property Name="ClubSocialMediaCount" Type="Int32" Nullable="false" />
+          <Property Name="ClubAchievementCount" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="AchievementClub" Relationship="KutupYildiziDBModel.FK_AchievementClub_Club" FromRole="Club" ToRole="AchievementClub" />
+          <NavigationProperty Name="AdministrativeBoard" Relationship="KutupYildiziDBModel.FK_Administrator_Club1" FromRole="Club" ToRole="AdministrativeBoard" />
+          <NavigationProperty Name="ClubMember" Relationship="KutupYildiziDBModel.FK_ClubMember_Club" FromRole="Club" ToRole="ClubMember" />
+          <NavigationProperty Name="Event" Relationship="KutupYildiziDBModel.FK_Event_Club" FromRole="Club" ToRole="Event" />
+          <NavigationProperty Name="SocialMediaClub" Relationship="KutupYildiziDBModel.FK_SocialMediaClub_Club" FromRole="Club" ToRole="SocialMediaClub" />
+          <NavigationProperty Name="PersonFollowClub" Relationship="KutupYildiziDBModel.FK_UserFollowClub_Club" FromRole="Club" ToRole="PersonFollowClub" />
+        </EntityType>
+        <EntityType Name="ClubMember">
+          <Key>
+            <PropertyRef Name="ClubID" />
+            <PropertyRef Name="PersonID" />
+          </Key>
+          <Property Name="ClubID" Type="Int32" Nullable="false" />
+          <Property Name="PersonID" Type="Int32" Nullable="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Club" Relationship="KutupYildiziDBModel.FK_ClubMember_Club" FromRole="ClubMember" ToRole="Club" />
+          <NavigationProperty Name="Person" Relationship="KutupYildiziDBModel.FK_ClubMember_Person" FromRole="ClubMember" ToRole="Person" />
+        </EntityType>
+        <EntityType Name="Department">
+          <Key>
+            <PropertyRef Name="DepartmentID" />
+          </Key>
+          <Property Name="DepartmentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DepartmentNameTR" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="DepartmentNameENG" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Person" Relationship="KutupYildiziDBModel.FK_Person_Department" FromRole="Department" ToRole="Person" />
+        </EntityType>
+        <EntityType Name="Device">
+          <Key>
+            <PropertyRef Name="DeviceID" />
+          </Key>
+          <Property Name="DeviceID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PersonID" Type="Int32" Nullable="false" />
+          <Property Name="DeviceTypeID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="DeviceType" Relationship="KutupYildiziDBModel.FK_Device_DeviceType" FromRole="Device" ToRole="DeviceType" />
+          <NavigationProperty Name="Person" Relationship="KutupYildiziDBModel.FK_Device_Person" FromRole="Device" ToRole="Person" />
+        </EntityType>
+        <EntityType Name="DeviceType">
+          <Key>
+            <PropertyRef Name="DeviceTypeID" />
+          </Key>
+          <Property Name="DeviceTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DeviceTypeName" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Device" Relationship="KutupYildiziDBModel.FK_Device_DeviceType" FromRole="DeviceType" ToRole="Device" />
+        </EntityType>
+        <EntityType Name="Event">
+          <Key>
+            <PropertyRef Name="EventID" />
+          </Key>
+          <Property Name="EventID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EventNameTR" Type="String" Nullable="false" MaxLength="250" Unicode="true" FixedLength="false" />
+          <Property Name="EventNameENG" Type="String" Nullable="false" MaxLength="250" Unicode="true" FixedLength="false" />
+          <Property Name="ClubID" Type="Int32" Nullable="false" />
+          <Property Name="EventPlaceTR" Type="String" Nullable="false" MaxLength="250" Unicode="true" FixedLength="false" />
+          <Property Name="EventPlaceENG" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+          <Property Name="EventHallTR" Type="String" Nullable="false" MaxLength="250" Unicode="true" FixedLength="false" />
+          <Property Name="EventHallENG" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+          <Property Name="EventStartDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="EventFinishDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="EventStartTime" Type="String" Nullable="false" MaxLength="5" Unicode="true" FixedLength="false" />
+          <Property Name="EventFinishTime" Type="String" Nullable="false" MaxLength="5" Unicode="true" FixedLength="false" />
+          <Property Name="EventLastUpdate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="EventPosterLink" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="EventDescTR" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="EventDescENG" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="EventConfirm" Type="Boolean" Nullable="false" />
+          <Property Name="EventAttendCount" Type="Int32" Nullable="false" />
+          <Property Name="EventShareCount" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Club" Relationship="KutupYildiziDBModel.FK_Event_Club" FromRole="Event" ToRole="Club" />
+          <NavigationProperty Name="PersonEventAttend" Relationship="KutupYildiziDBModel.FK_UserEventAttend_Event" FromRole="Event" ToRole="PersonEventAttend" />
+        </EntityType>
+        <EntityType Name="GlobalType">
+          <Key>
+            <PropertyRef Name="GlobalTypeID" />
+          </Key>
+          <Property Name="GlobalTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="GlobalTypeName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Achievement" Relationship="KutupYildiziDBModel.FK_Achievement_GlobalType" FromRole="GlobalType" ToRole="Achievement" />
+          <NavigationProperty Name="Result" Relationship="KutupYildiziDBModel.FK_Result_GlobalType" FromRole="GlobalType" ToRole="Result" />
+          <NavigationProperty Name="Timeline" Relationship="KutupYildiziDBModel.FK_Timeline_GlobalType1" FromRole="GlobalType" ToRole="Timeline" />
+        </EntityType>
+        <EntityType Name="Person">
+          <Key>
+            <PropertyRef Name="PersonID" />
+          </Key>
+          <Property Name="PersonID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PersonFName" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="PersonLName" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="PersonEmail" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="UniversityID" Type="Int32" Nullable="false" />
+          <Property Name="DepartmentID" Type="Int32" Nullable="false" />
+          <Property Name="PersonEventAttendCount" Type="Int32" Nullable="false" />
+          <Property Name="PersonShareCount" Type="Int32" Nullable="false" />
+          <Property Name="PersonClubFollowCount" Type="Int32" Nullable="false" />
+          <Property Name="PersonClubMemberCount" Type="Int32" Nullable="false" />
+          <Property Name="PersonSocialMediaCount" Type="Int32" Nullable="false" />
+          <Property Name="PersonDeviceCount" Type="Int32" Nullable="false" />
+          <Property Name="PersonAchievementCount" Type="Int32" Nullable="false" />
+          <Property Name="PersonPassword" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="PersonPhone" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="IsHide" Type="Boolean" Nullable="false" />
+          <Property Name="RoleID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="AchievementPerson" Relationship="KutupYildiziDBModel.FK_AchievementPerson_Person" FromRole="Person" ToRole="AchievementPerson" />
+          <NavigationProperty Name="AdministrativeBoard" Relationship="KutupYildiziDBModel.FK_AdministrativeBoard_Person" FromRole="Person" ToRole="AdministrativeBoard" />
+          <NavigationProperty Name="ClubMember" Relationship="KutupYildiziDBModel.FK_ClubMember_Person" FromRole="Person" ToRole="ClubMember" />
+          <NavigationProperty Name="Department" Relationship="KutupYildiziDBModel.FK_Person_Department" FromRole="Person" ToRole="Department" />
+          <NavigationProperty Name="Device" Relationship="KutupYildiziDBModel.FK_Device_Person" FromRole="Person" ToRole="Device" />
+          <NavigationProperty Name="University" Relationship="KutupYildiziDBModel.FK_Person_University" FromRole="Person" ToRole="University" />
+          <NavigationProperty Name="PersonEventAttend" Relationship="KutupYildiziDBModel.FK_PersonEventAttend_Person" FromRole="Person" ToRole="PersonEventAttend" />
+          <NavigationProperty Name="PersonFollowClub" Relationship="KutupYildiziDBModel.FK_PersonFollowClub_Person" FromRole="Person" ToRole="PersonFollowClub" />
+          <NavigationProperty Name="SocialMediaPerson" Relationship="KutupYildiziDBModel.FK_SocialMediaPerson_Person" FromRole="Person" ToRole="SocialMediaPerson" />
+        </EntityType>
+        <EntityType Name="PersonEventAttend">
+          <Key>
+            <PropertyRef Name="PersonID" />
+            <PropertyRef Name="EventID" />
+          </Key>
+          <Property Name="PersonID" Type="Int32" Nullable="false" />
+          <Property Name="EventID" Type="Int32" Nullable="false" />
+          <Property Name="FollowDate" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Event" Relationship="KutupYildiziDBModel.FK_UserEventAttend_Event" FromRole="PersonEventAttend" ToRole="Event" />
+          <NavigationProperty Name="Person" Relationship="KutupYildiziDBModel.FK_PersonEventAttend_Person" FromRole="PersonEventAttend" ToRole="Person" />
+        </EntityType>
+        <EntityType Name="PersonFollowClub">
+          <Key>
+            <PropertyRef Name="PersonID" />
+            <PropertyRef Name="ClubID" />
+          </Key>
+          <Property Name="PersonID" Type="Int32" Nullable="false" />
+          <Property Name="ClubID" Type="Int32" Nullable="false" />
+          <Property Name="FollowDate" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Club" Relationship="KutupYildiziDBModel.FK_UserFollowClub_Club" FromRole="PersonFollowClub" ToRole="Club" />
+          <NavigationProperty Name="Person" Relationship="KutupYildiziDBModel.FK_PersonFollowClub_Person" FromRole="PersonFollowClub" ToRole="Person" />
+        </EntityType>
+        <EntityType Name="Result">
+          <Key>
+            <PropertyRef Name="GlobalID" />
+            <PropertyRef Name="GlobalTypeID" />
+            <PropertyRef Name="ResultTypeID" />
+          </Key>
+          <Property Name="GlobalID" Type="Int32" Nullable="false" />
+          <Property Name="GlobalTypeID" Type="Int32" Nullable="false" />
+          <Property Name="ResultTypeID" Type="Int32" Nullable="false" />
+          <Property Name="ResultPoint" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="GlobalType" Relationship="KutupYildiziDBModel.FK_Result_GlobalType" FromRole="Result" ToRole="GlobalType" />
+          <NavigationProperty Name="ResultType" Relationship="KutupYildiziDBModel.FK_Result_ResultType" FromRole="Result" ToRole="ResultType" />
+        </EntityType>
+        <EntityType Name="ResultType">
+          <Key>
+            <PropertyRef Name="ResultTypeID" />
+          </Key>
+          <Property Name="ResultTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ResultTypeNameTR" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="ResultTypeNameENG" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="ResultTypeIconURL" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Achievement" Relationship="KutupYildiziDBModel.FK_Achievement_ResultType" FromRole="ResultType" ToRole="Achievement" />
+          <NavigationProperty Name="Result" Relationship="KutupYildiziDBModel.FK_Result_ResultType" FromRole="ResultType" ToRole="Result" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="RoleID" />
+          </Key>
+          <Property Name="RoleID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RoleNameTR" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="RoleNameENG" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="AdministrativeBoard" Relationship="KutupYildiziDBModel.FK_AdministrativeBoard_Role" FromRole="Role" ToRole="AdministrativeBoard" />
+        </EntityType>
+        <EntityType Name="SocialMedia">
+          <Key>
+            <PropertyRef Name="SocialMediaID" />
+          </Key>
+          <Property Name="SocialMediaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SocialMediaName" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="SocialMediaLink" Type="String" Nullable="false" MaxLength="250" Unicode="true" FixedLength="false" />
+          <Property Name="SocialMediaLogo" Type="String" Nullable="false" MaxLength="250" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="SocialMediaClub" Relationship="KutupYildiziDBModel.FK_SocialMediaClub_SocialMedia" FromRole="SocialMedia" ToRole="SocialMediaClub" />
+          <NavigationProperty Name="SocialMediaPerson" Relationship="KutupYildiziDBModel.FK_SocialMediaPerson_SocialMedia" FromRole="SocialMedia" ToRole="SocialMediaPerson" />
+        </EntityType>
+        <EntityType Name="SocialMediaClub">
+          <Key>
+            <PropertyRef Name="ClubID" />
+            <PropertyRef Name="SocialMediaID" />
+          </Key>
+          <Property Name="ClubID" Type="Int32" Nullable="false" />
+          <Property Name="SocialMediaID" Type="Int32" Nullable="false" />
+          <Property Name="SocialMediaClubName" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Club" Relationship="KutupYildiziDBModel.FK_SocialMediaClub_Club" FromRole="SocialMediaClub" ToRole="Club" />
+          <NavigationProperty Name="SocialMedia" Relationship="KutupYildiziDBModel.FK_SocialMediaClub_SocialMedia" FromRole="SocialMediaClub" ToRole="SocialMedia" />
+        </EntityType>
+        <EntityType Name="SocialMediaPerson">
+          <Key>
+            <PropertyRef Name="PersonID" />
+            <PropertyRef Name="SocialMediaID" />
+          </Key>
+          <Property Name="PersonID" Type="Int32" Nullable="false" />
+          <Property Name="SocialMediaID" Type="Int32" Nullable="false" />
+          <Property Name="SocialMediaPersonName" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Person" Relationship="KutupYildiziDBModel.FK_SocialMediaPerson_Person" FromRole="SocialMediaPerson" ToRole="Person" />
+          <NavigationProperty Name="SocialMedia" Relationship="KutupYildiziDBModel.FK_SocialMediaPerson_SocialMedia" FromRole="SocialMediaPerson" ToRole="SocialMedia" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Timeline">
+          <Key>
+            <PropertyRef Name="TimelineID" />
+          </Key>
+          <Property Name="TimelineID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TimelineEntryTR" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="TimelineEntryENG" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="TimelineEntryDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="GlobalID" Type="Int32" Nullable="false" />
+          <Property Name="GlobalTypeID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="GlobalType" Relationship="KutupYildiziDBModel.FK_Timeline_GlobalType1" FromRole="Timeline" ToRole="GlobalType" />
+        </EntityType>
+        <EntityType Name="University">
+          <Key>
+            <PropertyRef Name="UniversityID" />
+          </Key>
+          <Property Name="UniversityID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UniversityNameTR" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="UniversityNameENG" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Person" Relationship="KutupYildiziDBModel.FK_Person_University" FromRole="University" ToRole="Person" />
+        </EntityType>
+        <Association Name="FK_Achievement_AchievementType">
+          <End Role="AchievementType" Type="KutupYildiziDBModel.AchievementType" Multiplicity="1" />
+          <End Role="Achievement" Type="KutupYildiziDBModel.Achievement" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AchievementType">
+              <PropertyRef Name="AchievementTypeID" />
+            </Principal>
+            <Dependent Role="Achievement">
+              <PropertyRef Name="AchievementTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Achievement_GlobalType">
+          <End Role="GlobalType" Type="KutupYildiziDBModel.GlobalType" Multiplicity="1" />
+          <End Role="Achievement" Type="KutupYildiziDBModel.Achievement" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GlobalType">
+              <PropertyRef Name="GlobalTypeID" />
+            </Principal>
+            <Dependent Role="Achievement">
+              <PropertyRef Name="GlobalTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Achievement_ResultType">
+          <End Role="ResultType" Type="KutupYildiziDBModel.ResultType" Multiplicity="1" />
+          <End Role="Achievement" Type="KutupYildiziDBModel.Achievement" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ResultType">
+              <PropertyRef Name="ResultTypeID" />
+            </Principal>
+            <Dependent Role="Achievement">
+              <PropertyRef Name="ResultTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AchievementClub_Achievement">
+          <End Role="Achievement" Type="KutupYildiziDBModel.Achievement" Multiplicity="1" />
+          <End Role="AchievementClub" Type="KutupYildiziDBModel.AchievementClub" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Achievement">
+              <PropertyRef Name="AchievementID" />
+            </Principal>
+            <Dependent Role="AchievementClub">
+              <PropertyRef Name="AchievementID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AchievementPerson_Achievement">
+          <End Role="Achievement" Type="KutupYildiziDBModel.Achievement" Multiplicity="1" />
+          <End Role="AchievementPerson" Type="KutupYildiziDBModel.AchievementPerson" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Achievement">
+              <PropertyRef Name="AchievementID" />
+            </Principal>
+            <Dependent Role="AchievementPerson">
+              <PropertyRef Name="AchievementID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AchievementClub_Club">
+          <End Role="Club" Type="KutupYildiziDBModel.Club" Multiplicity="1" />
+          <End Role="AchievementClub" Type="KutupYildiziDBModel.AchievementClub" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Club">
+              <PropertyRef Name="ClubID" />
+            </Principal>
+            <Dependent Role="AchievementClub">
+              <PropertyRef Name="ClubID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AchievementPerson_Person">
+          <End Role="Person" Type="KutupYildiziDBModel.Person" Multiplicity="1" />
+          <End Role="AchievementPerson" Type="KutupYildiziDBModel.AchievementPerson" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="PersonID" />
+            </Principal>
+            <Dependent Role="AchievementPerson">
+              <PropertyRef Name="PersonID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AdministrativeBoard_Person">
+          <End Role="Person" Type="KutupYildiziDBModel.Person" Multiplicity="1" />
+          <End Role="AdministrativeBoard" Type="KutupYildiziDBModel.AdministrativeBoard" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="PersonID" />
+            </Principal>
+            <Dependent Role="AdministrativeBoard">
+              <PropertyRef Name="PersonID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AdministrativeBoard_Role">
+          <End Role="Role" Type="KutupYildiziDBModel.Role" Multiplicity="1" />
+          <End Role="AdministrativeBoard" Type="KutupYildiziDBModel.AdministrativeBoard" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="RoleID" />
+            </Principal>
+            <Dependent Role="AdministrativeBoard">
+              <PropertyRef Name="RolID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Administrator_Club1">
+          <End Role="Club" Type="KutupYildiziDBModel.Club" Multiplicity="1" />
+          <End Role="AdministrativeBoard" Type="KutupYildiziDBModel.AdministrativeBoard" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Club">
+              <PropertyRef Name="ClubID" />
+            </Principal>
+            <Dependent Role="AdministrativeBoard">
+              <PropertyRef Name="ClubID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ClubMember_Club">
+          <End Role="Club" Type="KutupYildiziDBModel.Club" Multiplicity="1" />
+          <End Role="ClubMember" Type="KutupYildiziDBModel.ClubMember" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Club">
+              <PropertyRef Name="ClubID" />
+            </Principal>
+            <Dependent Role="ClubMember">
+              <PropertyRef Name="ClubID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Event_Club">
+          <End Role="Club" Type="KutupYildiziDBModel.Club" Multiplicity="1" />
+          <End Role="Event" Type="KutupYildiziDBModel.Event" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Club">
+              <PropertyRef Name="ClubID" />
+            </Principal>
+            <Dependent Role="Event">
+              <PropertyRef Name="ClubID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SocialMediaClub_Club">
+          <End Role="Club" Type="KutupYildiziDBModel.Club" Multiplicity="1" />
+          <End Role="SocialMediaClub" Type="KutupYildiziDBModel.SocialMediaClub" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Club">
+              <PropertyRef Name="ClubID" />
+            </Principal>
+            <Dependent Role="SocialMediaClub">
+              <PropertyRef Name="ClubID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserFollowClub_Club">
+          <End Role="Club" Type="KutupYildiziDBModel.Club" Multiplicity="1" />
+          <End Role="PersonFollowClub" Type="KutupYildiziDBModel.PersonFollowClub" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Club">
+              <PropertyRef Name="ClubID" />
+            </Principal>
+            <Dependent Role="PersonFollowClub">
+              <PropertyRef Name="ClubID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ClubMember_Person">
+          <End Role="Person" Type="KutupYildiziDBModel.Person" Multiplicity="1" />
+          <End Role="ClubMember" Type="KutupYildiziDBModel.ClubMember" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="PersonID" />
+            </Principal>
+            <Dependent Role="ClubMember">
+              <PropertyRef Name="PersonID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Person_Department">
+          <End Role="Department" Type="KutupYildiziDBModel.Department" Multiplicity="1" />
+          <End Role="Person" Type="KutupYildiziDBModel.Person" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Department">
+              <PropertyRef Name="DepartmentID" />
+            </Principal>
+            <Dependent Role="Person">
+              <PropertyRef Name="DepartmentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Device_DeviceType">
+          <End Role="DeviceType" Type="KutupYildiziDBModel.DeviceType" Multiplicity="1" />
+          <End Role="Device" Type="KutupYildiziDBModel.Device" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DeviceType">
+              <PropertyRef Name="DeviceTypeID" />
+            </Principal>
+            <Dependent Role="Device">
+              <PropertyRef Name="DeviceTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Device_Person">
+          <End Role="Person" Type="KutupYildiziDBModel.Person" Multiplicity="1" />
+          <End Role="Device" Type="KutupYildiziDBModel.Device" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="PersonID" />
+            </Principal>
+            <Dependent Role="Device">
+              <PropertyRef Name="PersonID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserEventAttend_Event">
+          <End Role="Event" Type="KutupYildiziDBModel.Event" Multiplicity="1" />
+          <End Role="PersonEventAttend" Type="KutupYildiziDBModel.PersonEventAttend" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Event">
+              <PropertyRef Name="EventID" />
+            </Principal>
+            <Dependent Role="PersonEventAttend">
+              <PropertyRef Name="EventID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Result_GlobalType">
+          <End Role="GlobalType" Type="KutupYildiziDBModel.GlobalType" Multiplicity="1" />
+          <End Role="Result" Type="KutupYildiziDBModel.Result" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GlobalType">
+              <PropertyRef Name="GlobalTypeID" />
+            </Principal>
+            <Dependent Role="Result">
+              <PropertyRef Name="GlobalTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Timeline_GlobalType1">
+          <End Role="GlobalType" Type="KutupYildiziDBModel.GlobalType" Multiplicity="1" />
+          <End Role="Timeline" Type="KutupYildiziDBModel.Timeline" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GlobalType">
+              <PropertyRef Name="GlobalTypeID" />
+            </Principal>
+            <Dependent Role="Timeline">
+              <PropertyRef Name="GlobalTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Person_University">
+          <End Role="University" Type="KutupYildiziDBModel.University" Multiplicity="1" />
+          <End Role="Person" Type="KutupYildiziDBModel.Person" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="University">
+              <PropertyRef Name="UniversityID" />
+            </Principal>
+            <Dependent Role="Person">
+              <PropertyRef Name="UniversityID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PersonEventAttend_Person">
+          <End Role="Person" Type="KutupYildiziDBModel.Person" Multiplicity="1" />
+          <End Role="PersonEventAttend" Type="KutupYildiziDBModel.PersonEventAttend" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="PersonID" />
+            </Principal>
+            <Dependent Role="PersonEventAttend">
+              <PropertyRef Name="PersonID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PersonFollowClub_Person">
+          <End Role="Person" Type="KutupYildiziDBModel.Person" Multiplicity="1" />
+          <End Role="PersonFollowClub" Type="KutupYildiziDBModel.PersonFollowClub" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="PersonID" />
+            </Principal>
+            <Dependent Role="PersonFollowClub">
+              <PropertyRef Name="PersonID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SocialMediaPerson_Person">
+          <End Role="Person" Type="KutupYildiziDBModel.Person" Multiplicity="1" />
+          <End Role="SocialMediaPerson" Type="KutupYildiziDBModel.SocialMediaPerson" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="PersonID" />
+            </Principal>
+            <Dependent Role="SocialMediaPerson">
+              <PropertyRef Name="PersonID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Result_ResultType">
+          <End Role="ResultType" Type="KutupYildiziDBModel.ResultType" Multiplicity="1" />
+          <End Role="Result" Type="KutupYildiziDBModel.Result" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ResultType">
+              <PropertyRef Name="ResultTypeID" />
+            </Principal>
+            <Dependent Role="Result">
+              <PropertyRef Name="ResultTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SocialMediaClub_SocialMedia">
+          <End Role="SocialMedia" Type="KutupYildiziDBModel.SocialMedia" Multiplicity="1" />
+          <End Role="SocialMediaClub" Type="KutupYildiziDBModel.SocialMediaClub" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SocialMedia">
+              <PropertyRef Name="SocialMediaID" />
+            </Principal>
+            <Dependent Role="SocialMediaClub">
+              <PropertyRef Name="SocialMediaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SocialMediaPerson_SocialMedia">
+          <End Role="SocialMedia" Type="KutupYildiziDBModel.SocialMedia" Multiplicity="1" />
+          <End Role="SocialMediaPerson" Type="KutupYildiziDBModel.SocialMediaPerson" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SocialMedia">
+              <PropertyRef Name="SocialMediaID" />
+            </Principal>
+            <Dependent Role="SocialMediaPerson">
+              <PropertyRef Name="SocialMediaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="KutupYildiziDBModelStoreContainer" CdmEntityContainer="KutupYildiziDBEntities1">
+          <EntitySetMapping Name="Achievement"><EntityTypeMapping TypeName="KutupYildiziDBModel.Achievement"><MappingFragment StoreEntitySet="Achievement">
+            <ScalarProperty Name="AchievementID" ColumnName="AchievementID" />
+            <ScalarProperty Name="AchievementNameTR" ColumnName="AchievementNameTR" />
+            <ScalarProperty Name="AchievementNameENG" ColumnName="AchievementNameENG" />
+            <ScalarProperty Name="AchievementIconURL" ColumnName="AchievementIconURL" />
+            <ScalarProperty Name="AchievementPoint" ColumnName="AchievementPoint" />
+            <ScalarProperty Name="AchievementRequiredCount" ColumnName="AchievementRequiredCount" />
+            <ScalarProperty Name="AchievementTypeID" ColumnName="AchievementTypeID" />
+            <ScalarProperty Name="GlobalTypeID" ColumnName="GlobalTypeID" />
+            <ScalarProperty Name="ResultTypeID" ColumnName="ResultTypeID" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="AchievementClub"><EntityTypeMapping TypeName="KutupYildiziDBModel.AchievementClub"><MappingFragment StoreEntitySet="AchievementClub">
+            <ScalarProperty Name="ClubID" ColumnName="ClubID" />
+            <ScalarProperty Name="AchievementID" ColumnName="AchievementID" />
+            <ScalarProperty Name="CompletedDate" ColumnName="CompletedDate" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="AchievementPerson"><EntityTypeMapping TypeName="KutupYildiziDBModel.AchievementPerson"><MappingFragment StoreEntitySet="AchievementPerson">
+            <ScalarProperty Name="PersonID" ColumnName="PersonID" />
+            <ScalarProperty Name="AchievementID" ColumnName="AchievementID" />
+            <ScalarProperty Name="CompletedDate" ColumnName="CompletedDate" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="AchievementType"><EntityTypeMapping TypeName="KutupYildiziDBModel.AchievementType"><MappingFragment StoreEntitySet="AchievementType">
+            <ScalarProperty Name="AchievementTypeID" ColumnName="AchievementTypeID" />
+            <ScalarProperty Name="AchievementTypeName" ColumnName="AchievementTypeName" />
+            <ScalarProperty Name="TableName" ColumnName="TableName" />
+            <ScalarProperty Name="ColumnName" ColumnName="ColumnName" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="AdministrativeBoard"><EntityTypeMapping TypeName="KutupYildiziDBModel.AdministrativeBoard"><MappingFragment StoreEntitySet="AdministrativeBoard">
+            <ScalarProperty Name="ClubID" ColumnName="ClubID" />
+            <ScalarProperty Name="PersonID" ColumnName="PersonID" />
+            <ScalarProperty Name="RolID" ColumnName="RolID" />
+            <ScalarProperty Name="YearStart" ColumnName="YearStart" />
+            <ScalarProperty Name="YearEnd" ColumnName="YearEnd" />
+            <ScalarProperty Name="ClubAdvisorFullName" ColumnName="ClubAdvisorFullName" />
+            <ScalarProperty Name="IsArchive" ColumnName="IsArchive" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Club"><EntityTypeMapping TypeName="KutupYildiziDBModel.Club"><MappingFragment StoreEntitySet="Club">
+            <ScalarProperty Name="ClubID" ColumnName="ClubID" />
+            <ScalarProperty Name="ClubNameTR" ColumnName="ClubNameTR" />
+            <ScalarProperty Name="ClubNameENG" ColumnName="ClubNameENG" />
+            <ScalarProperty Name="ClubDescTR" ColumnName="ClubDescTR" />
+            <ScalarProperty Name="ClubDescENG" ColumnName="ClubDescENG" />
+            <ScalarProperty Name="ClubFoundDate" ColumnName="ClubFoundDate" />
+            <ScalarProperty Name="ClubStatuteTR" ColumnName="ClubStatuteTR" />
+            <ScalarProperty Name="ClubStatuteENG" ColumnName="ClubStatuteENG" />
+            <ScalarProperty Name="ClubLogoPathTR" ColumnName="ClubLogoPathTR" />
+            <ScalarProperty Name="ClubLogoPathENG" ColumnName="ClubLogoPathENG" />
+            <ScalarProperty Name="ClubAdvisorFullName" ColumnName="ClubAdvisorFullName" />
+            <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+            <ScalarProperty Name="ClubMemberCount" ColumnName="ClubMemberCount" />
+            <ScalarProperty Name="ClubEventCount" ColumnName="ClubEventCount" />
+            <ScalarProperty Name="ClubFollowerCount" ColumnName="ClubFollowerCount" />
+            <ScalarProperty Name="ClubShareCount" ColumnName="ClubShareCount" />
+            <ScalarProperty Name="ClubEventTotalAttendCount" ColumnName="ClubEventTotalAttendCount" />
+            <ScalarProperty Name="ClubSocialMediaCount" ColumnName="ClubSocialMediaCount" />
+            <ScalarProperty Name="ClubAchievementCount" ColumnName="ClubAchievementCount" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="ClubMember"><EntityTypeMapping TypeName="KutupYildiziDBModel.ClubMember"><MappingFragment StoreEntitySet="ClubMember">
+            <ScalarProperty Name="ClubID" ColumnName="ClubID" />
+            <ScalarProperty Name="PersonID" ColumnName="PersonID" />
+            <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Department"><EntityTypeMapping TypeName="KutupYildiziDBModel.Department"><MappingFragment StoreEntitySet="Department">
+            <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+            <ScalarProperty Name="DepartmentNameTR" ColumnName="DepartmentNameTR" />
+            <ScalarProperty Name="DepartmentNameENG" ColumnName="DepartmentNameENG" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Device"><EntityTypeMapping TypeName="KutupYildiziDBModel.Device"><MappingFragment StoreEntitySet="Device">
+            <ScalarProperty Name="DeviceID" ColumnName="DeviceID" />
+            <ScalarProperty Name="PersonID" ColumnName="PersonID" />
+            <ScalarProperty Name="DeviceTypeID" ColumnName="DeviceTypeID" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="DeviceType"><EntityTypeMapping TypeName="KutupYildiziDBModel.DeviceType"><MappingFragment StoreEntitySet="DeviceType">
+            <ScalarProperty Name="DeviceTypeID" ColumnName="DeviceTypeID" />
+            <ScalarProperty Name="DeviceTypeName" ColumnName="DeviceTypeName" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Event"><EntityTypeMapping TypeName="KutupYildiziDBModel.Event"><MappingFragment StoreEntitySet="Event">
+            <ScalarProperty Name="EventID" ColumnName="EventID" />
+            <ScalarProperty Name="EventNameTR" ColumnName="EventNameTR" />
+            <ScalarProperty Name="EventNameENG" ColumnName="EventNameENG" />
+            <ScalarProperty Name="ClubID" ColumnName="ClubID" />
+            <ScalarProperty Name="EventPlaceTR" ColumnName="EventPlaceTR" />
+            <ScalarProperty Name="EventPlaceENG" ColumnName="EventPlaceENG" />
+            <ScalarProperty Name="EventHallTR" ColumnName="EventHallTR" />
+            <ScalarProperty Name="EventHallENG" ColumnName="EventHallENG" />
+            <ScalarProperty Name="EventStartDate" ColumnName="EventStartDate" />
+            <ScalarProperty Name="EventFinishDate" ColumnName="EventFinishDate" />
+            <ScalarProperty Name="EventStartTime" ColumnName="EventStartTime" />
+            <ScalarProperty Name="EventFinishTime" ColumnName="EventFinishTime" />
+            <ScalarProperty Name="EventLastUpdate" ColumnName="EventLastUpdate" />
+            <ScalarProperty Name="EventPosterLink" ColumnName="EventPosterLink" />
+            <ScalarProperty Name="EventDescTR" ColumnName="EventDescTR" />
+            <ScalarProperty Name="EventDescENG" ColumnName="EventDescENG" />
+            <ScalarProperty Name="EventConfirm" ColumnName="EventConfirm" />
+            <ScalarProperty Name="EventAttendCount" ColumnName="EventAttendCount" />
+            <ScalarProperty Name="EventShareCount" ColumnName="EventShareCount" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="GlobalType"><EntityTypeMapping TypeName="KutupYildiziDBModel.GlobalType"><MappingFragment StoreEntitySet="GlobalType">
+            <ScalarProperty Name="GlobalTypeID" ColumnName="GlobalTypeID" />
+            <ScalarProperty Name="GlobalTypeName" ColumnName="GlobalTypeName" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Person"><EntityTypeMapping TypeName="KutupYildiziDBModel.Person"><MappingFragment StoreEntitySet="Person">
+            <ScalarProperty Name="PersonID" ColumnName="PersonID" />
+            <ScalarProperty Name="PersonFName" ColumnName="PersonFName" />
+            <ScalarProperty Name="PersonLName" ColumnName="PersonLName" />
+            <ScalarProperty Name="PersonEmail" ColumnName="PersonEmail" />
+            <ScalarProperty Name="UniversityID" ColumnName="UniversityID" />
+            <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+            <ScalarProperty Name="PersonEventAttendCount" ColumnName="PersonEventAttendCount" />
+            <ScalarProperty Name="PersonShareCount" ColumnName="PersonShareCount" />
+            <ScalarProperty Name="PersonClubFollowCount" ColumnName="PersonClubFollowCount" />
+            <ScalarProperty Name="PersonClubMemberCount" ColumnName="PersonClubMemberCount" />
+            <ScalarProperty Name="PersonSocialMediaCount" ColumnName="PersonSocialMediaCount" />
+            <ScalarProperty Name="PersonDeviceCount" ColumnName="PersonDeviceCount" />
+            <ScalarProperty Name="PersonAchievementCount" ColumnName="PersonAchievementCount" />
+            <ScalarProperty Name="PersonPassword" ColumnName="PersonPassword" />
+            <ScalarProperty Name="PersonPhone" ColumnName="PersonPhone" />
+            <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+            <ScalarProperty Name="IsHide" ColumnName="IsHide" />
+            <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="PersonEventAttend"><EntityTypeMapping TypeName="KutupYildiziDBModel.PersonEventAttend"><MappingFragment StoreEntitySet="PersonEventAttend">
+            <ScalarProperty Name="PersonID" ColumnName="PersonID" />
+            <ScalarProperty Name="EventID" ColumnName="EventID" />
+            <ScalarProperty Name="FollowDate" ColumnName="FollowDate" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="PersonFollowClub"><EntityTypeMapping TypeName="KutupYildiziDBModel.PersonFollowClub"><MappingFragment StoreEntitySet="PersonFollowClub">
+            <ScalarProperty Name="PersonID" ColumnName="PersonID" />
+            <ScalarProperty Name="ClubID" ColumnName="ClubID" />
+            <ScalarProperty Name="FollowDate" ColumnName="FollowDate" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Result"><EntityTypeMapping TypeName="KutupYildiziDBModel.Result"><MappingFragment StoreEntitySet="Result">
+            <ScalarProperty Name="GlobalID" ColumnName="GlobalID" />
+            <ScalarProperty Name="GlobalTypeID" ColumnName="GlobalTypeID" />
+            <ScalarProperty Name="ResultTypeID" ColumnName="ResultTypeID" />
+            <ScalarProperty Name="ResultPoint" ColumnName="ResultPoint" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="ResultType"><EntityTypeMapping TypeName="KutupYildiziDBModel.ResultType"><MappingFragment StoreEntitySet="ResultType">
+            <ScalarProperty Name="ResultTypeID" ColumnName="ResultTypeID" />
+            <ScalarProperty Name="ResultTypeNameTR" ColumnName="ResultTypeNameTR" />
+            <ScalarProperty Name="ResultTypeNameENG" ColumnName="ResultTypeNameENG" />
+            <ScalarProperty Name="ResultTypeIconURL" ColumnName="ResultTypeIconURL" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Role"><EntityTypeMapping TypeName="KutupYildiziDBModel.Role"><MappingFragment StoreEntitySet="Role">
+            <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+            <ScalarProperty Name="RoleNameTR" ColumnName="RoleNameTR" />
+            <ScalarProperty Name="RoleNameENG" ColumnName="RoleNameENG" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="SocialMedia"><EntityTypeMapping TypeName="KutupYildiziDBModel.SocialMedia"><MappingFragment StoreEntitySet="SocialMedia">
+            <ScalarProperty Name="SocialMediaID" ColumnName="SocialMediaID" />
+            <ScalarProperty Name="SocialMediaName" ColumnName="SocialMediaName" />
+            <ScalarProperty Name="SocialMediaLink" ColumnName="SocialMediaLink" />
+            <ScalarProperty Name="SocialMediaLogo" ColumnName="SocialMediaLogo" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="SocialMediaClub"><EntityTypeMapping TypeName="KutupYildiziDBModel.SocialMediaClub"><MappingFragment StoreEntitySet="SocialMediaClub">
+            <ScalarProperty Name="ClubID" ColumnName="ClubID" />
+            <ScalarProperty Name="SocialMediaID" ColumnName="SocialMediaID" />
+            <ScalarProperty Name="SocialMediaClubName" ColumnName="SocialMediaClubName" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="SocialMediaPerson"><EntityTypeMapping TypeName="KutupYildiziDBModel.SocialMediaPerson"><MappingFragment StoreEntitySet="SocialMediaPerson">
+            <ScalarProperty Name="PersonID" ColumnName="PersonID" />
+            <ScalarProperty Name="SocialMediaID" ColumnName="SocialMediaID" />
+            <ScalarProperty Name="SocialMediaPersonName" ColumnName="SocialMediaPersonName" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams"><EntityTypeMapping TypeName="KutupYildiziDBModel.sysdiagrams"><MappingFragment StoreEntitySet="sysdiagrams">
+            <ScalarProperty Name="name" ColumnName="name" />
+            <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+            <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+            <ScalarProperty Name="version" ColumnName="version" />
+            <ScalarProperty Name="definition" ColumnName="definition" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Timeline"><EntityTypeMapping TypeName="KutupYildiziDBModel.Timeline"><MappingFragment StoreEntitySet="Timeline">
+            <ScalarProperty Name="TimelineID" ColumnName="TimelineID" />
+            <ScalarProperty Name="TimelineEntryTR" ColumnName="TimelineEntryTR" />
+            <ScalarProperty Name="TimelineEntryENG" ColumnName="TimelineEntryENG" />
+            <ScalarProperty Name="TimelineEntryDate" ColumnName="TimelineEntryDate" />
+            <ScalarProperty Name="GlobalID" ColumnName="GlobalID" />
+            <ScalarProperty Name="GlobalTypeID" ColumnName="GlobalTypeID" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="University"><EntityTypeMapping TypeName="KutupYildiziDBModel.University"><MappingFragment StoreEntitySet="University">
+            <ScalarProperty Name="UniversityID" ColumnName="UniversityID" />
+            <ScalarProperty Name="UniversityNameTR" ColumnName="UniversityNameTR" />
+            <ScalarProperty Name="UniversityNameENG" ColumnName="UniversityNameENG" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,49 @@
+﻿@model PoleStarWebVS11.Models.LoginModel
+
+@{
+    ViewBag.Title = "Login";
+}
+
+<h2>Login</h2>
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>Login</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PersonEmail)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PersonEmail)
+            @Html.ValidationMessageFor(model => model.PersonEmail)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PersonPassword)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PersonPassword)
+            @Html.ValidationMessageFor(model => model.PersonPassword)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.RememberMe)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.RememberMe)
+            @Html.ValidationMessageFor(model => model.RememberMe)
+        </div>
+
+        <p>
+            <input type="submit" value="Login" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

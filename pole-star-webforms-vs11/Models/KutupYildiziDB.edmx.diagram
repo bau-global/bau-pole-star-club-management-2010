@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="f7b7e1c18b74408aab84dde06d9bfbe5" Name="Diagram1">
+        <EntityTypeShape EntityType="KutupYildiziDBModel.Achievement" Width="1.5" PointX="3" PointY="29.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="KutupYildiziDBModel.AchievementClub" Width="1.5" PointX="6" PointY="26" IsExpanded="true" />
+        <EntityTypeShape EntityType="KutupYildiziDBModel.AchievementPerson" Width="1.5" PointX="5.25" PointY="13.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="KutupYildiziDBModel.AchievementType" Width="1.5" PointX="0.75" PointY="27.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="KutupYildiziDBModel.AdministrativeBoard" Width="1.5" PointX="8.25" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KutupYildiziDBModel.Club" Width="1.5" PointX="3.75" PointY="20.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="KutupYildiziDBModel.ClubMember" Width="1.5" PointX="5.25" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="KutupYildiziDBModel.Department" Width="1.5" PointX="0.75" PointY="13.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="KutupYildiziDBModel.Device" Width="1.5" PointX="5.25" PointY="16.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="KutupYildiziDBModel.DeviceType" Width="1.5" PointX="3" PointY="18.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="KutupYildiziDBModel.Event" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KutupYildiziDBModel.GlobalType" Width="1.5" PointX="0.75" PointY="30.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="KutupYildiziDBModel.Person" Width="1.5" PointX="3" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="KutupYildiziDBModel.PersonEventAttend" Width="1.5" PointX="8.25" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="KutupYildiziDBModel.PersonFollowClub" Width="1.5" PointX="8.25" PointY="17.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="KutupYildiziDBModel.Result" Width="1.5" PointX="6" PointY="31.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="KutupYildiziDBModel.ResultType" Width="1.5" PointX="0.75" PointY="32.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="KutupYildiziDBModel.Role" Width="1.5" PointX="6" PointY="19.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="KutupYildiziDBModel.SocialMedia" Width="1.5" PointX="3" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="KutupYildiziDBModel.SocialMediaClub" Width="1.5" PointX="11" PointY="16" IsExpanded="true" />
+        <EntityTypeShape EntityType="KutupYildiziDBModel.SocialMediaPerson" Width="1.5" PointX="5.25" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="KutupYildiziDBModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="KutupYildiziDBModel.Timeline" Width="1.5" PointX="3" PointY="33.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="KutupYildiziDBModel.University" Width="1.5" PointX="0.75" PointY="10.375" IsExpanded="true" />
+        <AssociationConnector Association="KutupYildiziDBModel.FK_Achievement_AchievementType" ManuallyRouted="false" />
+        <AssociationConnector Association="KutupYildiziDBModel.FK_Achievement_GlobalType" ManuallyRouted="false" />
+        <AssociationConnector Association="KutupYildiziDBModel.FK_Achievement_ResultType" ManuallyRouted="false" />
+        <AssociationConnector Association="KutupYildiziDBModel.FK_AchievementClub_Achievement" ManuallyRouted="false" />
+        <AssociationConnector Association="KutupYildiziDBModel.FK_AchievementPerson_Achievement" ManuallyRouted="false" />
+        <AssociationConnector Association="KutupYildiziDBModel.FK_AchievementClub_Club" ManuallyRouted="false" />
+        <AssociationConnector Association="KutupYildiziDBModel.FK_AchievementPerson_Person" ManuallyRouted="false" />
+        <AssociationConnector Association="KutupYildiziDBModel.FK_AdministrativeBoard_Person" ManuallyRouted="false" />
+        <AssociationConnector Association="KutupYildiziDBModel.FK_AdministrativeBoard_Role" ManuallyRouted="false" />
+        <AssociationConnector Association="KutupYildiziDBModel.FK_Administrator_Club1" ManuallyRouted="false" />
+        <AssociationConnector Association="KutupYildiziDBModel.FK_ClubMember_Club" ManuallyRouted="false" />
+        <AssociationConnector Association="KutupYildiziDBModel.FK_Event_Club" ManuallyRouted="false" />
+        <AssociationConnector Association="KutupYildiziDBModel.FK_SocialMediaClub_Club" ManuallyRouted="false" />
+        <AssociationConnector Association="KutupYildiziDBModel.FK_UserFollowClub_Club" ManuallyRouted="false" />
+        <AssociationConnector Association="KutupYildiziDBModel.FK_ClubMember_Person" ManuallyRouted="false" />
+        <AssociationConnector Association="KutupYildiziDBModel.FK_Person_Department" ManuallyRouted="false" />
+        <AssociationConnector Association="KutupYildiziDBModel.FK_Device_DeviceType" ManuallyRouted="false" />
+        <AssociationConnector Association="KutupYildiziDBModel.FK_Device_Person" ManuallyRouted="false" />
+        <AssociationConnector Association="KutupYildiziDBModel.FK_UserEventAttend_Event" ManuallyRouted="false" />
+        <AssociationConnector Association="KutupYildiziDBModel.FK_Result_GlobalType" ManuallyRouted="false" />
+        <AssociationConnector Association="KutupYildiziDBModel.FK_Timeline_GlobalType1" ManuallyRouted="false" />
+        <AssociationConnector Association="KutupYildiziDBModel.FK_Person_University" ManuallyRouted="false" />
+        <AssociationConnector Association="KutupYildiziDBModel.FK_PersonEventAttend_Person" ManuallyRouted="false" />
+        <AssociationConnector Association="KutupYildiziDBModel.FK_PersonFollowClub_Person" ManuallyRouted="false" />
+        <AssociationConnector Association="KutupYildiziDBModel.FK_SocialMediaPerson_Person" ManuallyRouted="false" />
+        <AssociationConnector Association="KutupYildiziDBModel.FK_Result_ResultType" ManuallyRouted="false" />
+        <AssociationConnector Association="KutupYildiziDBModel.FK_SocialMediaClub_SocialMedia" ManuallyRouted="false" />
+        <AssociationConnector Association="KutupYildiziDBModel.FK_SocialMediaPerson_SocialMedia" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

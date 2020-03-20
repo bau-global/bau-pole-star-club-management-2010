@@ -1,0 +1,891 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="bu_yabi_kutupyildiziModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="bu_yabi_kutupyildiziModelStoreContainer">
+          <EntitySet Name="AdministrativeBoard" EntityType="bu_yabi_kutupyildiziModel.Store.AdministrativeBoard" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Club" EntityType="bu_yabi_kutupyildiziModel.Store.Club" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ClubMember" EntityType="bu_yabi_kutupyildiziModel.Store.ClubMember" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Device" EntityType="bu_yabi_kutupyildiziModel.Store.Device" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="DeviceType" EntityType="bu_yabi_kutupyildiziModel.Store.DeviceType" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Event" EntityType="bu_yabi_kutupyildiziModel.Store.Event" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Person" EntityType="bu_yabi_kutupyildiziModel.Store.Person" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PersonEventAttend" EntityType="bu_yabi_kutupyildiziModel.Store.PersonEventAttend" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PersonFollowClub" EntityType="bu_yabi_kutupyildiziModel.Store.PersonFollowClub" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Role" EntityType="bu_yabi_kutupyildiziModel.Store.Role" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SocialMedia" EntityType="bu_yabi_kutupyildiziModel.Store.SocialMedia" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SocialMediaClub" EntityType="bu_yabi_kutupyildiziModel.Store.SocialMediaClub" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="sysdiagrams" EntityType="bu_yabi_kutupyildiziModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_AdministrativeBoard_Person" Association="bu_yabi_kutupyildiziModel.Store.FK_AdministrativeBoard_Person">
+            <End Role="Person" EntitySet="Person" />
+            <End Role="AdministrativeBoard" EntitySet="AdministrativeBoard" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AdministrativeBoard_Role" Association="bu_yabi_kutupyildiziModel.Store.FK_AdministrativeBoard_Role">
+            <End Role="Role" EntitySet="Role" />
+            <End Role="AdministrativeBoard" EntitySet="AdministrativeBoard" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Administrator_Club1" Association="bu_yabi_kutupyildiziModel.Store.FK_Administrator_Club1">
+            <End Role="Club" EntitySet="Club" />
+            <End Role="AdministrativeBoard" EntitySet="AdministrativeBoard" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ClubMember_Club" Association="bu_yabi_kutupyildiziModel.Store.FK_ClubMember_Club">
+            <End Role="Club" EntitySet="Club" />
+            <End Role="ClubMember" EntitySet="ClubMember" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ClubMember_Person" Association="bu_yabi_kutupyildiziModel.Store.FK_ClubMember_Person">
+            <End Role="Person" EntitySet="Person" />
+            <End Role="ClubMember" EntitySet="ClubMember" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Device_DeviceType" Association="bu_yabi_kutupyildiziModel.Store.FK_Device_DeviceType">
+            <End Role="DeviceType" EntitySet="DeviceType" />
+            <End Role="Device" EntitySet="Device" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Device_Person" Association="bu_yabi_kutupyildiziModel.Store.FK_Device_Person">
+            <End Role="Person" EntitySet="Person" />
+            <End Role="Device" EntitySet="Device" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Event_Club" Association="bu_yabi_kutupyildiziModel.Store.FK_Event_Club">
+            <End Role="Club" EntitySet="Club" />
+            <End Role="Event" EntitySet="Event" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PersonEventAttend_Person" Association="bu_yabi_kutupyildiziModel.Store.FK_PersonEventAttend_Person">
+            <End Role="Person" EntitySet="Person" />
+            <End Role="PersonEventAttend" EntitySet="PersonEventAttend" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PersonFollowClub_Person" Association="bu_yabi_kutupyildiziModel.Store.FK_PersonFollowClub_Person">
+            <End Role="Person" EntitySet="Person" />
+            <End Role="PersonFollowClub" EntitySet="PersonFollowClub" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SocialMediaClub_Club" Association="bu_yabi_kutupyildiziModel.Store.FK_SocialMediaClub_Club">
+            <End Role="Club" EntitySet="Club" />
+            <End Role="SocialMediaClub" EntitySet="SocialMediaClub" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SocialMediaClub_SocialMedia" Association="bu_yabi_kutupyildiziModel.Store.FK_SocialMediaClub_SocialMedia">
+            <End Role="SocialMedia" EntitySet="SocialMedia" />
+            <End Role="SocialMediaClub" EntitySet="SocialMediaClub" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserEventAttend_Event" Association="bu_yabi_kutupyildiziModel.Store.FK_UserEventAttend_Event">
+            <End Role="Event" EntitySet="Event" />
+            <End Role="PersonEventAttend" EntitySet="PersonEventAttend" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserFollowClub_Club" Association="bu_yabi_kutupyildiziModel.Store.FK_UserFollowClub_Club">
+            <End Role="Club" EntitySet="Club" />
+            <End Role="PersonFollowClub" EntitySet="PersonFollowClub" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="AdministrativeBoard">
+          <Key>
+            <PropertyRef Name="ClubID" />
+            <PropertyRef Name="PersonID" />
+            <PropertyRef Name="RolID" />
+            <PropertyRef Name="YearStart" />
+          </Key>
+          <Property Name="ClubID" Type="int" Nullable="false" />
+          <Property Name="PersonID" Type="int" Nullable="false" />
+          <Property Name="RolID" Type="int" Nullable="false" />
+          <Property Name="YearStart" Type="char" Nullable="false" MaxLength="2" />
+          <Property Name="YearEnd" Type="char" MaxLength="2" />
+          <Property Name="IsArchive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Club">
+          <Key>
+            <PropertyRef Name="ClubID" />
+          </Key>
+          <Property Name="ClubID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ClubNameTR" Type="nvarchar" Nullable="false" MaxLength="150" />
+          <Property Name="ClubNameENG" Type="nvarchar" Nullable="false" MaxLength="150" />
+          <Property Name="ClubDescTR" Type="text" Nullable="false" />
+          <Property Name="ClubDescENG" Type="text" Nullable="false" />
+          <Property Name="ClubStatuteTR" Type="text" />
+          <Property Name="ClubStatuteENG" Type="text" />
+          <Property Name="ClubLogoPathTR" Type="nvarchar" Nullable="false" MaxLength="250" />
+          <Property Name="ClubLogoPathENG" Type="nvarchar" MaxLength="250" />
+          <Property Name="ClubAdvisorFullName" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="ClubEventCount" Type="int" Nullable="false" />
+          <Property Name="ClubFollowerCount" Type="int" Nullable="false" />
+          <Property Name="ClubShareCount" Type="int" Nullable="false" />
+          <Property Name="ClubEventAttendCount" Type="int" Nullable="false" />
+          <Property Name="ClubWebAddress" Type="nvarchar" MaxLength="255" />
+          <Property Name="ClubEmailAddress" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="ClubMember">
+          <Key>
+            <PropertyRef Name="ClubID" />
+            <PropertyRef Name="PersonID" />
+          </Key>
+          <Property Name="ClubID" Type="int" Nullable="false" />
+          <Property Name="PersonID" Type="int" Nullable="false" />
+          <Property Name="IsActive" Type="bit" />
+        </EntityType>
+        <EntityType Name="Device">
+          <Key>
+            <PropertyRef Name="DeviceID" />
+          </Key>
+          <Property Name="DeviceID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="PersonID" Type="int" Nullable="false" />
+          <Property Name="DeviceTypeID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DeviceType">
+          <Key>
+            <PropertyRef Name="DeviceTypeID" />
+          </Key>
+          <Property Name="DeviceTypeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="DeviceTypeName" Type="nvarchar" Nullable="false" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Event">
+          <Key>
+            <PropertyRef Name="EventID" />
+          </Key>
+          <Property Name="EventID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="EventNameTR" Type="nvarchar" Nullable="false" MaxLength="250" />
+          <Property Name="EventNameENG" Type="nvarchar" MaxLength="250" />
+          <Property Name="ClubID" Type="int" Nullable="false" />
+          <Property Name="EventPlaceTR" Type="nvarchar" Nullable="false" MaxLength="250" />
+          <Property Name="EventPlaceENG" Type="nvarchar" MaxLength="250" />
+          <Property Name="EventHallTR" Type="nvarchar" Nullable="false" MaxLength="250" />
+          <Property Name="EventHallENG" Type="nvarchar" MaxLength="250" />
+          <Property Name="EventStartDate" Type="date" Nullable="false" />
+          <Property Name="EventFinishDate" Type="date" Nullable="false" />
+          <Property Name="EventStartTime" Type="nvarchar" Nullable="false" MaxLength="5" />
+          <Property Name="EventFinishTime" Type="nvarchar" Nullable="false" MaxLength="5" />
+          <Property Name="EventLastUpdate" Type="datetime" />
+          <Property Name="EventPosterLink" Type="nvarchar" MaxLength="500" />
+          <Property Name="EventDescTR" Type="text" Nullable="false" />
+          <Property Name="EventDescENG" Type="text" />
+          <Property Name="EventConfirm" Type="bit" Nullable="false" />
+          <Property Name="EventAttendCount" Type="int" Nullable="false" />
+          <Property Name="EventShareCount" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Person">
+          <Key>
+            <PropertyRef Name="PersonID" />
+          </Key>
+          <Property Name="PersonID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="PersonFName" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="PersonLName" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="PersonEmail" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="PersonEventAttendCount" Type="int" Nullable="false" />
+          <Property Name="PersonEventShareCount" Type="int" Nullable="false" />
+          <Property Name="PersonClubFollowCount" Type="int" Nullable="false" />
+          <Property Name="PersonClubShareCount" Type="int" Nullable="false" />
+          <Property Name="PersonPassword" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="PersonPhone" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="PersonEventAttend">
+          <Key>
+            <PropertyRef Name="PersonID" />
+            <PropertyRef Name="EventID" />
+          </Key>
+          <Property Name="PersonID" Type="int" Nullable="false" />
+          <Property Name="EventID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PersonFollowClub">
+          <Key>
+            <PropertyRef Name="PersonID" />
+            <PropertyRef Name="ClubID" />
+          </Key>
+          <Property Name="PersonID" Type="int" Nullable="false" />
+          <Property Name="ClubID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="RoleID" />
+          </Key>
+          <Property Name="RoleID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="RoleNameTR" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="RoleNameENG" Type="nvarchar" Nullable="false" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="SocialMedia">
+          <Key>
+            <PropertyRef Name="SocialMediaID" />
+          </Key>
+          <Property Name="SocialMediaID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SocialMediaName" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="SocialMediaLink" Type="nvarchar" MaxLength="250" />
+          <Property Name="SocialMediaLogo" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="SocialMediaClub">
+          <Key>
+            <PropertyRef Name="ClubID" />
+            <PropertyRef Name="SocialMediaID" />
+          </Key>
+          <Property Name="ClubID" Type="int" Nullable="false" />
+          <Property Name="SocialMediaID" Type="int" Nullable="false" />
+          <Property Name="SocialMediaClubName" Type="nvarchar" Nullable="false" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <Association Name="FK_AdministrativeBoard_Person">
+          <End Role="Person" Type="bu_yabi_kutupyildiziModel.Store.Person" Multiplicity="1" />
+          <End Role="AdministrativeBoard" Type="bu_yabi_kutupyildiziModel.Store.AdministrativeBoard" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="PersonID" />
+            </Principal>
+            <Dependent Role="AdministrativeBoard">
+              <PropertyRef Name="PersonID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AdministrativeBoard_Role">
+          <End Role="Role" Type="bu_yabi_kutupyildiziModel.Store.Role" Multiplicity="1" />
+          <End Role="AdministrativeBoard" Type="bu_yabi_kutupyildiziModel.Store.AdministrativeBoard" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="RoleID" />
+            </Principal>
+            <Dependent Role="AdministrativeBoard">
+              <PropertyRef Name="RolID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Administrator_Club1">
+          <End Role="Club" Type="bu_yabi_kutupyildiziModel.Store.Club" Multiplicity="1" />
+          <End Role="AdministrativeBoard" Type="bu_yabi_kutupyildiziModel.Store.AdministrativeBoard" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Club">
+              <PropertyRef Name="ClubID" />
+            </Principal>
+            <Dependent Role="AdministrativeBoard">
+              <PropertyRef Name="ClubID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ClubMember_Club">
+          <End Role="Club" Type="bu_yabi_kutupyildiziModel.Store.Club" Multiplicity="1" />
+          <End Role="ClubMember" Type="bu_yabi_kutupyildiziModel.Store.ClubMember" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Club">
+              <PropertyRef Name="ClubID" />
+            </Principal>
+            <Dependent Role="ClubMember">
+              <PropertyRef Name="ClubID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ClubMember_Person">
+          <End Role="Person" Type="bu_yabi_kutupyildiziModel.Store.Person" Multiplicity="1" />
+          <End Role="ClubMember" Type="bu_yabi_kutupyildiziModel.Store.ClubMember" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="PersonID" />
+            </Principal>
+            <Dependent Role="ClubMember">
+              <PropertyRef Name="PersonID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Device_DeviceType">
+          <End Role="DeviceType" Type="bu_yabi_kutupyildiziModel.Store.DeviceType" Multiplicity="1" />
+          <End Role="Device" Type="bu_yabi_kutupyildiziModel.Store.Device" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DeviceType">
+              <PropertyRef Name="DeviceTypeID" />
+            </Principal>
+            <Dependent Role="Device">
+              <PropertyRef Name="DeviceTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Device_Person">
+          <End Role="Person" Type="bu_yabi_kutupyildiziModel.Store.Person" Multiplicity="1" />
+          <End Role="Device" Type="bu_yabi_kutupyildiziModel.Store.Device" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="PersonID" />
+            </Principal>
+            <Dependent Role="Device">
+              <PropertyRef Name="PersonID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Event_Club">
+          <End Role="Club" Type="bu_yabi_kutupyildiziModel.Store.Club" Multiplicity="1" />
+          <End Role="Event" Type="bu_yabi_kutupyildiziModel.Store.Event" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Club">
+              <PropertyRef Name="ClubID" />
+            </Principal>
+            <Dependent Role="Event">
+              <PropertyRef Name="ClubID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PersonEventAttend_Person">
+          <End Role="Person" Type="bu_yabi_kutupyildiziModel.Store.Person" Multiplicity="1" />
+          <End Role="PersonEventAttend" Type="bu_yabi_kutupyildiziModel.Store.PersonEventAttend" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="PersonID" />
+            </Principal>
+            <Dependent Role="PersonEventAttend">
+              <PropertyRef Name="PersonID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PersonFollowClub_Person">
+          <End Role="Person" Type="bu_yabi_kutupyildiziModel.Store.Person" Multiplicity="1" />
+          <End Role="PersonFollowClub" Type="bu_yabi_kutupyildiziModel.Store.PersonFollowClub" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="PersonID" />
+            </Principal>
+            <Dependent Role="PersonFollowClub">
+              <PropertyRef Name="PersonID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SocialMediaClub_Club">
+          <End Role="Club" Type="bu_yabi_kutupyildiziModel.Store.Club" Multiplicity="1" />
+          <End Role="SocialMediaClub" Type="bu_yabi_kutupyildiziModel.Store.SocialMediaClub" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Club">
+              <PropertyRef Name="ClubID" />
+            </Principal>
+            <Dependent Role="SocialMediaClub">
+              <PropertyRef Name="ClubID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SocialMediaClub_SocialMedia">
+          <End Role="SocialMedia" Type="bu_yabi_kutupyildiziModel.Store.SocialMedia" Multiplicity="1" />
+          <End Role="SocialMediaClub" Type="bu_yabi_kutupyildiziModel.Store.SocialMediaClub" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SocialMedia">
+              <PropertyRef Name="SocialMediaID" />
+            </Principal>
+            <Dependent Role="SocialMediaClub">
+              <PropertyRef Name="SocialMediaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserEventAttend_Event">
+          <End Role="Event" Type="bu_yabi_kutupyildiziModel.Store.Event" Multiplicity="1" />
+          <End Role="PersonEventAttend" Type="bu_yabi_kutupyildiziModel.Store.PersonEventAttend" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Event">
+              <PropertyRef Name="EventID" />
+            </Principal>
+            <Dependent Role="PersonEventAttend">
+              <PropertyRef Name="EventID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserFollowClub_Club">
+          <End Role="Club" Type="bu_yabi_kutupyildiziModel.Store.Club" Multiplicity="1" />
+          <End Role="PersonFollowClub" Type="bu_yabi_kutupyildiziModel.Store.PersonFollowClub" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Club">
+              <PropertyRef Name="ClubID" />
+            </Principal>
+            <Dependent Role="PersonFollowClub">
+              <PropertyRef Name="ClubID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="bu_yabi_kutupyildiziModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="bu_yabi_kutupyildiziEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AdministrativeBoard" EntityType="bu_yabi_kutupyildiziModel.AdministrativeBoard" />
+          <EntitySet Name="Club" EntityType="bu_yabi_kutupyildiziModel.Club" />
+          <EntitySet Name="ClubMember" EntityType="bu_yabi_kutupyildiziModel.ClubMember" />
+          <EntitySet Name="Device" EntityType="bu_yabi_kutupyildiziModel.Device" />
+          <EntitySet Name="DeviceType" EntityType="bu_yabi_kutupyildiziModel.DeviceType" />
+          <EntitySet Name="Event" EntityType="bu_yabi_kutupyildiziModel.Event" />
+          <EntitySet Name="Person" EntityType="bu_yabi_kutupyildiziModel.Person" />
+          <EntitySet Name="Role" EntityType="bu_yabi_kutupyildiziModel.Role" />
+          <EntitySet Name="SocialMedia" EntityType="bu_yabi_kutupyildiziModel.SocialMedia" />
+          <EntitySet Name="SocialMediaClub" EntityType="bu_yabi_kutupyildiziModel.SocialMediaClub" />
+          <EntitySet Name="sysdiagrams" EntityType="bu_yabi_kutupyildiziModel.sysdiagrams" />
+          <AssociationSet Name="FK_AdministrativeBoard_Person" Association="bu_yabi_kutupyildiziModel.FK_AdministrativeBoard_Person">
+            <End Role="Person" EntitySet="Person" />
+            <End Role="AdministrativeBoard" EntitySet="AdministrativeBoard" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AdministrativeBoard_Role" Association="bu_yabi_kutupyildiziModel.FK_AdministrativeBoard_Role">
+            <End Role="Role" EntitySet="Role" />
+            <End Role="AdministrativeBoard" EntitySet="AdministrativeBoard" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Administrator_Club1" Association="bu_yabi_kutupyildiziModel.FK_Administrator_Club1">
+            <End Role="Club" EntitySet="Club" />
+            <End Role="AdministrativeBoard" EntitySet="AdministrativeBoard" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ClubMember_Club" Association="bu_yabi_kutupyildiziModel.FK_ClubMember_Club">
+            <End Role="Club" EntitySet="Club" />
+            <End Role="ClubMember" EntitySet="ClubMember" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Event_Club" Association="bu_yabi_kutupyildiziModel.FK_Event_Club">
+            <End Role="Club" EntitySet="Club" />
+            <End Role="Event" EntitySet="Event" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SocialMediaClub_Club" Association="bu_yabi_kutupyildiziModel.FK_SocialMediaClub_Club">
+            <End Role="Club" EntitySet="Club" />
+            <End Role="SocialMediaClub" EntitySet="SocialMediaClub" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ClubMember_Person" Association="bu_yabi_kutupyildiziModel.FK_ClubMember_Person">
+            <End Role="Person" EntitySet="Person" />
+            <End Role="ClubMember" EntitySet="ClubMember" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Device_DeviceType" Association="bu_yabi_kutupyildiziModel.FK_Device_DeviceType">
+            <End Role="DeviceType" EntitySet="DeviceType" />
+            <End Role="Device" EntitySet="Device" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Device_Person" Association="bu_yabi_kutupyildiziModel.FK_Device_Person">
+            <End Role="Person" EntitySet="Person" />
+            <End Role="Device" EntitySet="Device" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SocialMediaClub_SocialMedia" Association="bu_yabi_kutupyildiziModel.FK_SocialMediaClub_SocialMedia">
+            <End Role="SocialMedia" EntitySet="SocialMedia" />
+            <End Role="SocialMediaClub" EntitySet="SocialMediaClub" />
+          </AssociationSet>
+          <AssociationSet Name="PersonEventAttend" Association="bu_yabi_kutupyildiziModel.PersonEventAttend">
+            <End Role="Person" EntitySet="Person" />
+            <End Role="Event" EntitySet="Event" />
+          </AssociationSet>
+          <AssociationSet Name="PersonFollowClub" Association="bu_yabi_kutupyildiziModel.PersonFollowClub">
+            <End Role="Person" EntitySet="Person" />
+            <End Role="Club" EntitySet="Club" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="AdministrativeBoard">
+          <Key>
+            <PropertyRef Name="ClubID" />
+            <PropertyRef Name="PersonID" />
+            <PropertyRef Name="RolID" />
+            <PropertyRef Name="YearStart" />
+          </Key>
+          <Property Name="ClubID" Type="Int32" Nullable="false" />
+          <Property Name="PersonID" Type="Int32" Nullable="false" />
+          <Property Name="RolID" Type="Int32" Nullable="false" />
+          <Property Name="YearStart" Type="String" Nullable="false" MaxLength="2" Unicode="false" FixedLength="true" />
+          <Property Name="YearEnd" Type="String" MaxLength="2" Unicode="false" FixedLength="true" />
+          <Property Name="IsArchive" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Person" Relationship="bu_yabi_kutupyildiziModel.FK_AdministrativeBoard_Person" FromRole="AdministrativeBoard" ToRole="Person" />
+          <NavigationProperty Name="Role" Relationship="bu_yabi_kutupyildiziModel.FK_AdministrativeBoard_Role" FromRole="AdministrativeBoard" ToRole="Role" />
+          <NavigationProperty Name="Club" Relationship="bu_yabi_kutupyildiziModel.FK_Administrator_Club1" FromRole="AdministrativeBoard" ToRole="Club" />
+        </EntityType>
+        <EntityType Name="Club">
+          <Key>
+            <PropertyRef Name="ClubID" />
+          </Key>
+          <Property Name="ClubID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ClubNameTR" Type="String" Nullable="false" MaxLength="150" Unicode="true" FixedLength="false" />
+          <Property Name="ClubNameENG" Type="String" Nullable="false" MaxLength="150" Unicode="true" FixedLength="false" />
+          <Property Name="ClubDescTR" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="ClubDescENG" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="ClubStatuteTR" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="ClubStatuteENG" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="ClubLogoPathTR" Type="String" Nullable="false" MaxLength="250" Unicode="true" FixedLength="false" />
+          <Property Name="ClubLogoPathENG" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+          <Property Name="ClubAdvisorFullName" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="ClubEventCount" Type="Int32" Nullable="false" />
+          <Property Name="ClubFollowerCount" Type="Int32" Nullable="false" />
+          <Property Name="ClubShareCount" Type="Int32" Nullable="false" />
+          <Property Name="ClubEventAttendCount" Type="Int32" Nullable="false" />
+          <Property Name="ClubWebAddress" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="ClubEmailAddress" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="AdministrativeBoard" Relationship="bu_yabi_kutupyildiziModel.FK_Administrator_Club1" FromRole="Club" ToRole="AdministrativeBoard" />
+          <NavigationProperty Name="ClubMember" Relationship="bu_yabi_kutupyildiziModel.FK_ClubMember_Club" FromRole="Club" ToRole="ClubMember" />
+          <NavigationProperty Name="Event" Relationship="bu_yabi_kutupyildiziModel.FK_Event_Club" FromRole="Club" ToRole="Event" />
+          <NavigationProperty Name="SocialMediaClub" Relationship="bu_yabi_kutupyildiziModel.FK_SocialMediaClub_Club" FromRole="Club" ToRole="SocialMediaClub" />
+          <NavigationProperty Name="Person" Relationship="bu_yabi_kutupyildiziModel.PersonFollowClub" FromRole="Club" ToRole="Person" />
+        </EntityType>
+        <EntityType Name="ClubMember">
+          <Key>
+            <PropertyRef Name="ClubID" />
+            <PropertyRef Name="PersonID" />
+          </Key>
+          <Property Name="ClubID" Type="Int32" Nullable="false" />
+          <Property Name="PersonID" Type="Int32" Nullable="false" />
+          <Property Name="IsActive" Type="Boolean" />
+          <NavigationProperty Name="Club" Relationship="bu_yabi_kutupyildiziModel.FK_ClubMember_Club" FromRole="ClubMember" ToRole="Club" />
+          <NavigationProperty Name="Person" Relationship="bu_yabi_kutupyildiziModel.FK_ClubMember_Person" FromRole="ClubMember" ToRole="Person" />
+        </EntityType>
+        <EntityType Name="Device">
+          <Key>
+            <PropertyRef Name="DeviceID" />
+          </Key>
+          <Property Name="DeviceID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PersonID" Type="Int32" Nullable="false" />
+          <Property Name="DeviceTypeID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="DeviceType" Relationship="bu_yabi_kutupyildiziModel.FK_Device_DeviceType" FromRole="Device" ToRole="DeviceType" />
+          <NavigationProperty Name="Person" Relationship="bu_yabi_kutupyildiziModel.FK_Device_Person" FromRole="Device" ToRole="Person" />
+        </EntityType>
+        <EntityType Name="DeviceType">
+          <Key>
+            <PropertyRef Name="DeviceTypeID" />
+          </Key>
+          <Property Name="DeviceTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DeviceTypeName" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Device" Relationship="bu_yabi_kutupyildiziModel.FK_Device_DeviceType" FromRole="DeviceType" ToRole="Device" />
+        </EntityType>
+        <EntityType Name="Event">
+          <Key>
+            <PropertyRef Name="EventID" />
+          </Key>
+          <Property Name="EventID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EventNameTR" Type="String" Nullable="false" MaxLength="250" Unicode="true" FixedLength="false" />
+          <Property Name="EventNameENG" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+          <Property Name="ClubID" Type="Int32" Nullable="false" />
+          <Property Name="EventPlaceTR" Type="String" Nullable="false" MaxLength="250" Unicode="true" FixedLength="false" />
+          <Property Name="EventPlaceENG" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+          <Property Name="EventHallTR" Type="String" Nullable="false" MaxLength="250" Unicode="true" FixedLength="false" />
+          <Property Name="EventHallENG" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+          <Property Name="EventStartDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="EventFinishDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="EventStartTime" Type="String" Nullable="false" MaxLength="5" Unicode="true" FixedLength="false" />
+          <Property Name="EventFinishTime" Type="String" Nullable="false" MaxLength="5" Unicode="true" FixedLength="false" />
+          <Property Name="EventLastUpdate" Type="DateTime" Precision="3" />
+          <Property Name="EventPosterLink" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="EventDescTR" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="EventDescENG" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="EventConfirm" Type="Boolean" Nullable="false" />
+          <Property Name="EventAttendCount" Type="Int32" Nullable="false" />
+          <Property Name="EventShareCount" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Club" Relationship="bu_yabi_kutupyildiziModel.FK_Event_Club" FromRole="Event" ToRole="Club" />
+          <NavigationProperty Name="Person" Relationship="bu_yabi_kutupyildiziModel.PersonEventAttend" FromRole="Event" ToRole="Person" />
+        </EntityType>
+        <EntityType Name="Person">
+          <Key>
+            <PropertyRef Name="PersonID" />
+          </Key>
+          <Property Name="PersonID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PersonFName" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="PersonLName" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="PersonEmail" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="PersonEventAttendCount" Type="Int32" Nullable="false" />
+          <Property Name="PersonEventShareCount" Type="Int32" Nullable="false" />
+          <Property Name="PersonClubFollowCount" Type="Int32" Nullable="false" />
+          <Property Name="PersonClubShareCount" Type="Int32" Nullable="false" />
+          <Property Name="PersonPassword" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="PersonPhone" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
+          <NavigationProperty Name="AdministrativeBoard" Relationship="bu_yabi_kutupyildiziModel.FK_AdministrativeBoard_Person" FromRole="Person" ToRole="AdministrativeBoard" />
+          <NavigationProperty Name="ClubMember" Relationship="bu_yabi_kutupyildiziModel.FK_ClubMember_Person" FromRole="Person" ToRole="ClubMember" />
+          <NavigationProperty Name="Device" Relationship="bu_yabi_kutupyildiziModel.FK_Device_Person" FromRole="Person" ToRole="Device" />
+          <NavigationProperty Name="Event" Relationship="bu_yabi_kutupyildiziModel.PersonEventAttend" FromRole="Person" ToRole="Event" />
+          <NavigationProperty Name="Club" Relationship="bu_yabi_kutupyildiziModel.PersonFollowClub" FromRole="Person" ToRole="Club" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="RoleID" />
+          </Key>
+          <Property Name="RoleID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RoleNameTR" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="RoleNameENG" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="AdministrativeBoard" Relationship="bu_yabi_kutupyildiziModel.FK_AdministrativeBoard_Role" FromRole="Role" ToRole="AdministrativeBoard" />
+        </EntityType>
+        <EntityType Name="SocialMedia">
+          <Key>
+            <PropertyRef Name="SocialMediaID" />
+          </Key>
+          <Property Name="SocialMediaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SocialMediaName" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="SocialMediaLink" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+          <Property Name="SocialMediaLogo" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="SocialMediaClub" Relationship="bu_yabi_kutupyildiziModel.FK_SocialMediaClub_SocialMedia" FromRole="SocialMedia" ToRole="SocialMediaClub" />
+        </EntityType>
+        <EntityType Name="SocialMediaClub">
+          <Key>
+            <PropertyRef Name="ClubID" />
+            <PropertyRef Name="SocialMediaID" />
+          </Key>
+          <Property Name="ClubID" Type="Int32" Nullable="false" />
+          <Property Name="SocialMediaID" Type="Int32" Nullable="false" />
+          <Property Name="SocialMediaClubName" Type="String" Nullable="false" MaxLength="250" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Club" Relationship="bu_yabi_kutupyildiziModel.FK_SocialMediaClub_Club" FromRole="SocialMediaClub" ToRole="Club" />
+          <NavigationProperty Name="SocialMedia" Relationship="bu_yabi_kutupyildiziModel.FK_SocialMediaClub_SocialMedia" FromRole="SocialMediaClub" ToRole="SocialMedia" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <Association Name="FK_AdministrativeBoard_Person">
+          <End Role="Person" Type="bu_yabi_kutupyildiziModel.Person" Multiplicity="1" />
+          <End Role="AdministrativeBoard" Type="bu_yabi_kutupyildiziModel.AdministrativeBoard" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="PersonID" />
+            </Principal>
+            <Dependent Role="AdministrativeBoard">
+              <PropertyRef Name="PersonID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AdministrativeBoard_Role">
+          <End Role="Role" Type="bu_yabi_kutupyildiziModel.Role" Multiplicity="1" />
+          <End Role="AdministrativeBoard" Type="bu_yabi_kutupyildiziModel.AdministrativeBoard" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="RoleID" />
+            </Principal>
+            <Dependent Role="AdministrativeBoard">
+              <PropertyRef Name="RolID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Administrator_Club1">
+          <End Role="Club" Type="bu_yabi_kutupyildiziModel.Club" Multiplicity="1" />
+          <End Role="AdministrativeBoard" Type="bu_yabi_kutupyildiziModel.AdministrativeBoard" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Club">
+              <PropertyRef Name="ClubID" />
+            </Principal>
+            <Dependent Role="AdministrativeBoard">
+              <PropertyRef Name="ClubID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ClubMember_Club">
+          <End Role="Club" Type="bu_yabi_kutupyildiziModel.Club" Multiplicity="1" />
+          <End Role="ClubMember" Type="bu_yabi_kutupyildiziModel.ClubMember" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Club">
+              <PropertyRef Name="ClubID" />
+            </Principal>
+            <Dependent Role="ClubMember">
+              <PropertyRef Name="ClubID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Event_Club">
+          <End Role="Club" Type="bu_yabi_kutupyildiziModel.Club" Multiplicity="1" />
+          <End Role="Event" Type="bu_yabi_kutupyildiziModel.Event" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Club">
+              <PropertyRef Name="ClubID" />
+            </Principal>
+            <Dependent Role="Event">
+              <PropertyRef Name="ClubID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SocialMediaClub_Club">
+          <End Role="Club" Type="bu_yabi_kutupyildiziModel.Club" Multiplicity="1" />
+          <End Role="SocialMediaClub" Type="bu_yabi_kutupyildiziModel.SocialMediaClub" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Club">
+              <PropertyRef Name="ClubID" />
+            </Principal>
+            <Dependent Role="SocialMediaClub">
+              <PropertyRef Name="ClubID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ClubMember_Person">
+          <End Role="Person" Type="bu_yabi_kutupyildiziModel.Person" Multiplicity="1" />
+          <End Role="ClubMember" Type="bu_yabi_kutupyildiziModel.ClubMember" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="PersonID" />
+            </Principal>
+            <Dependent Role="ClubMember">
+              <PropertyRef Name="PersonID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Device_DeviceType">
+          <End Role="DeviceType" Type="bu_yabi_kutupyildiziModel.DeviceType" Multiplicity="1" />
+          <End Role="Device" Type="bu_yabi_kutupyildiziModel.Device" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DeviceType">
+              <PropertyRef Name="DeviceTypeID" />
+            </Principal>
+            <Dependent Role="Device">
+              <PropertyRef Name="DeviceTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Device_Person">
+          <End Role="Person" Type="bu_yabi_kutupyildiziModel.Person" Multiplicity="1" />
+          <End Role="Device" Type="bu_yabi_kutupyildiziModel.Device" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="PersonID" />
+            </Principal>
+            <Dependent Role="Device">
+              <PropertyRef Name="PersonID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SocialMediaClub_SocialMedia">
+          <End Role="SocialMedia" Type="bu_yabi_kutupyildiziModel.SocialMedia" Multiplicity="1" />
+          <End Role="SocialMediaClub" Type="bu_yabi_kutupyildiziModel.SocialMediaClub" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SocialMedia">
+              <PropertyRef Name="SocialMediaID" />
+            </Principal>
+            <Dependent Role="SocialMediaClub">
+              <PropertyRef Name="SocialMediaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PersonEventAttend">
+          <End Role="Person" Type="bu_yabi_kutupyildiziModel.Person" Multiplicity="*" />
+          <End Role="Event" Type="bu_yabi_kutupyildiziModel.Event" Multiplicity="*" />
+        </Association>
+        <Association Name="PersonFollowClub">
+          <End Role="Person" Type="bu_yabi_kutupyildiziModel.Person" Multiplicity="*" />
+          <End Role="Club" Type="bu_yabi_kutupyildiziModel.Club" Multiplicity="*" />
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="bu_yabi_kutupyildiziModelStoreContainer" CdmEntityContainer="bu_yabi_kutupyildiziEntities">
+          <EntitySetMapping Name="AdministrativeBoard"><EntityTypeMapping TypeName="bu_yabi_kutupyildiziModel.AdministrativeBoard"><MappingFragment StoreEntitySet="AdministrativeBoard">
+            <ScalarProperty Name="ClubID" ColumnName="ClubID" />
+            <ScalarProperty Name="PersonID" ColumnName="PersonID" />
+            <ScalarProperty Name="RolID" ColumnName="RolID" />
+            <ScalarProperty Name="YearStart" ColumnName="YearStart" />
+            <ScalarProperty Name="YearEnd" ColumnName="YearEnd" />
+            <ScalarProperty Name="IsArchive" ColumnName="IsArchive" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Club"><EntityTypeMapping TypeName="bu_yabi_kutupyildiziModel.Club"><MappingFragment StoreEntitySet="Club">
+            <ScalarProperty Name="ClubID" ColumnName="ClubID" />
+            <ScalarProperty Name="ClubNameTR" ColumnName="ClubNameTR" />
+            <ScalarProperty Name="ClubNameENG" ColumnName="ClubNameENG" />
+            <ScalarProperty Name="ClubDescTR" ColumnName="ClubDescTR" />
+            <ScalarProperty Name="ClubDescENG" ColumnName="ClubDescENG" />
+            <ScalarProperty Name="ClubStatuteTR" ColumnName="ClubStatuteTR" />
+            <ScalarProperty Name="ClubStatuteENG" ColumnName="ClubStatuteENG" />
+            <ScalarProperty Name="ClubLogoPathTR" ColumnName="ClubLogoPathTR" />
+            <ScalarProperty Name="ClubLogoPathENG" ColumnName="ClubLogoPathENG" />
+            <ScalarProperty Name="ClubAdvisorFullName" ColumnName="ClubAdvisorFullName" />
+            <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+            <ScalarProperty Name="ClubEventCount" ColumnName="ClubEventCount" />
+            <ScalarProperty Name="ClubFollowerCount" ColumnName="ClubFollowerCount" />
+            <ScalarProperty Name="ClubShareCount" ColumnName="ClubShareCount" />
+            <ScalarProperty Name="ClubEventAttendCount" ColumnName="ClubEventAttendCount" />
+            <ScalarProperty Name="ClubWebAddress" ColumnName="ClubWebAddress" />
+            <ScalarProperty Name="ClubEmailAddress" ColumnName="ClubEmailAddress" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="ClubMember"><EntityTypeMapping TypeName="bu_yabi_kutupyildiziModel.ClubMember"><MappingFragment StoreEntitySet="ClubMember">
+            <ScalarProperty Name="ClubID" ColumnName="ClubID" />
+            <ScalarProperty Name="PersonID" ColumnName="PersonID" />
+            <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Device"><EntityTypeMapping TypeName="bu_yabi_kutupyildiziModel.Device"><MappingFragment StoreEntitySet="Device">
+            <ScalarProperty Name="DeviceID" ColumnName="DeviceID" />
+            <ScalarProperty Name="PersonID" ColumnName="PersonID" />
+            <ScalarProperty Name="DeviceTypeID" ColumnName="DeviceTypeID" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="DeviceType"><EntityTypeMapping TypeName="bu_yabi_kutupyildiziModel.DeviceType"><MappingFragment StoreEntitySet="DeviceType">
+            <ScalarProperty Name="DeviceTypeID" ColumnName="DeviceTypeID" />
+            <ScalarProperty Name="DeviceTypeName" ColumnName="DeviceTypeName" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Event"><EntityTypeMapping TypeName="bu_yabi_kutupyildiziModel.Event"><MappingFragment StoreEntitySet="Event">
+            <ScalarProperty Name="EventID" ColumnName="EventID" />
+            <ScalarProperty Name="EventNameTR" ColumnName="EventNameTR" />
+            <ScalarProperty Name="EventNameENG" ColumnName="EventNameENG" />
+            <ScalarProperty Name="ClubID" ColumnName="ClubID" />
+            <ScalarProperty Name="EventPlaceTR" ColumnName="EventPlaceTR" />
+            <ScalarProperty Name="EventPlaceENG" ColumnName="EventPlaceENG" />
+            <ScalarProperty Name="EventHallTR" ColumnName="EventHallTR" />
+            <ScalarProperty Name="EventHallENG" ColumnName="EventHallENG" />
+            <ScalarProperty Name="EventStartDate" ColumnName="EventStartDate" />
+            <ScalarProperty Name="EventFinishDate" ColumnName="EventFinishDate" />
+            <ScalarProperty Name="EventStartTime" ColumnName="EventStartTime" />
+            <ScalarProperty Name="EventFinishTime" ColumnName="EventFinishTime" />
+            <ScalarProperty Name="EventLastUpdate" ColumnName="EventLastUpdate" />
+            <ScalarProperty Name="EventPosterLink" ColumnName="EventPosterLink" />
+            <ScalarProperty Name="EventDescTR" ColumnName="EventDescTR" />
+            <ScalarProperty Name="EventDescENG" ColumnName="EventDescENG" />
+            <ScalarProperty Name="EventConfirm" ColumnName="EventConfirm" />
+            <ScalarProperty Name="EventAttendCount" ColumnName="EventAttendCount" />
+            <ScalarProperty Name="EventShareCount" ColumnName="EventShareCount" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Person"><EntityTypeMapping TypeName="bu_yabi_kutupyildiziModel.Person"><MappingFragment StoreEntitySet="Person">
+            <ScalarProperty Name="PersonID" ColumnName="PersonID" />
+            <ScalarProperty Name="PersonFName" ColumnName="PersonFName" />
+            <ScalarProperty Name="PersonLName" ColumnName="PersonLName" />
+            <ScalarProperty Name="PersonEmail" ColumnName="PersonEmail" />
+            <ScalarProperty Name="PersonEventAttendCount" ColumnName="PersonEventAttendCount" />
+            <ScalarProperty Name="PersonEventShareCount" ColumnName="PersonEventShareCount" />
+            <ScalarProperty Name="PersonClubFollowCount" ColumnName="PersonClubFollowCount" />
+            <ScalarProperty Name="PersonClubShareCount" ColumnName="PersonClubShareCount" />
+            <ScalarProperty Name="PersonPassword" ColumnName="PersonPassword" />
+            <ScalarProperty Name="PersonPhone" ColumnName="PersonPhone" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Role"><EntityTypeMapping TypeName="bu_yabi_kutupyildiziModel.Role"><MappingFragment StoreEntitySet="Role">
+            <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+            <ScalarProperty Name="RoleNameTR" ColumnName="RoleNameTR" />
+            <ScalarProperty Name="RoleNameENG" ColumnName="RoleNameENG" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="SocialMedia"><EntityTypeMapping TypeName="bu_yabi_kutupyildiziModel.SocialMedia"><MappingFragment StoreEntitySet="SocialMedia">
+            <ScalarProperty Name="SocialMediaID" ColumnName="SocialMediaID" />
+            <ScalarProperty Name="SocialMediaName" ColumnName="SocialMediaName" />
+            <ScalarProperty Name="SocialMediaLink" ColumnName="SocialMediaLink" />
+            <ScalarProperty Name="SocialMediaLogo" ColumnName="SocialMediaLogo" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="SocialMediaClub"><EntityTypeMapping TypeName="bu_yabi_kutupyildiziModel.SocialMediaClub"><MappingFragment StoreEntitySet="SocialMediaClub">
+            <ScalarProperty Name="ClubID" ColumnName="ClubID" />
+            <ScalarProperty Name="SocialMediaID" ColumnName="SocialMediaID" />
+            <ScalarProperty Name="SocialMediaClubName" ColumnName="SocialMediaClubName" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams"><EntityTypeMapping TypeName="bu_yabi_kutupyildiziModel.sysdiagrams"><MappingFragment StoreEntitySet="sysdiagrams">
+            <ScalarProperty Name="name" ColumnName="name" />
+            <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+            <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+            <ScalarProperty Name="version" ColumnName="version" />
+            <ScalarProperty Name="definition" ColumnName="definition" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <AssociationSetMapping Name="PersonEventAttend" TypeName="bu_yabi_kutupyildiziModel.PersonEventAttend" StoreEntitySet="PersonEventAttend">
+            <EndProperty Name="Person">
+              <ScalarProperty Name="PersonID" ColumnName="PersonID" />
+            </EndProperty>
+            <EndProperty Name="Event">
+              <ScalarProperty Name="EventID" ColumnName="EventID" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="PersonFollowClub" TypeName="bu_yabi_kutupyildiziModel.PersonFollowClub" StoreEntitySet="PersonFollowClub">
+            <EndProperty Name="Person">
+              <ScalarProperty Name="PersonID" ColumnName="PersonID" />
+            </EndProperty>
+            <EndProperty Name="Club">
+              <ScalarProperty Name="ClubID" ColumnName="ClubID" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
